@@ -159,6 +159,7 @@ p, h1, img, button, div {
     rotate: 0deg;
     z-index: 0;
     user-select: none;
+    transition-duration: 0.3s;
 }
 
 #GreenPlanet {

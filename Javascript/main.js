@@ -19,6 +19,7 @@ async function main() {
 
     // Starts up various other modules, can be started whenever
     initalizeStars();
+    smallStars();
 
     // Changes objects when window is resized
     window.addEventListener("resize", () => {resizeElements(false); scrollChange();});
@@ -31,12 +32,12 @@ async function main() {
     document.getElementById("Mystery").addEventListener("click", ()=>{redirect("/videoFile.mp4")});
 
     // Add expand listeners to footer buttons
-    document.getElementById("Terms").addEventListener("mouseover", ()=>{expand("Terms")});
-    document.getElementById("Sitemap").addEventListener("mouseover", ()=>{expand("Sitemap")});
-    document.getElementById("Mystery").addEventListener("mouseover", ()=>{expand("Mystery")});
-    document.getElementById("Terms").addEventListener("mouseout", resizeText);
-    document.getElementById("Sitemap").addEventListener("mouseout", resizeText);
-    document.getElementById("Mystery").addEventListener("mouseout", resizeText);
+    document.getElementById("Terms").addEventListener("mouseover", ()=>{requestAnimationFrame(()=> {expand("Terms")})});
+    document.getElementById("Sitemap").addEventListener("mouseover", ()=>{requestAnimationFrame(()=> {expand("Sitemap")})});
+    document.getElementById("Mystery").addEventListener("mouseover", ()=>{requestAnimationFrame(()=> {expand("Mystery")})});
+    document.getElementById("Terms").addEventListener("mouseout", ()=>{requestAnimationFrame(resizeText)});
+    document.getElementById("Sitemap").addEventListener("mouseout", ()=>{requestAnimationFrame(resizeText)});
+    document.getElementById("Mystery").addEventListener("mouseout", ()=>{requestAnimationFrame(resizeText)});
 
     // Creates audio looper, must wait
     await initalizeLooper();
@@ -187,14 +188,14 @@ async function redirect(url) {
 async function initalizeStars() {
 
     // Time interval to spawn a star (milliseconds)
-    const time = 200;
+    const time = 300;
 
     const star0 = "/images/stars/star0.png";
     const star1 = "/images/stars/star1.png";
     const star2 = "/images/stars/star2.png";
     const star3 = "/images/stars/star3.png";
     const star4 = "/images/stars/star4.png";
-    const starArray = [star0, star1, star2, star3, star4, star4, star3, star2, star1];
+    const starArray = [star0, star1, star2, star3, star4, star4, star3, star2, star1, star0];
     const defaultStar = new Image();
     defaultStar.className = "star";
     defaultStar.style.width = (window.innerHeight/20).toString()+"px";
@@ -204,24 +205,40 @@ async function initalizeStars() {
     }, time)
 }
 
+// Make tons of tiny little stars float on the screen
+async function smallStars(){
+    const defaultStar = new Image();
+    defaultStar.className = "star";
+    defaultStar.style.width = (window.innerHeight/300).toString()+"px";
+    defaultStar.src = "/images/stars/smallStar.png";
+    defaultStar.style.height = defaultStar.style.width;
+    defaultStar.style.visibility = "visible";
+    for (let i = 0; i < 200; i++) {
+        const currentStar = defaultStar.cloneNode(true);
+        currentStar.style.top = (Math.random() * 100).toString()+"%";
+        currentStar.style.left = (Math.random() * 100).toString()+"%";
+        document.body.appendChild(currentStar);
+    }
+}
+
 // Copies from default star, places on random spot on screen then animates
 async function animateStar(star, frames) {
     // Create Star
     const currentStar = star.cloneNode(true);
     let position = 0;
+    let totalRotate = 0;
     const time = 150;
+    let rotateMult = Math.random()*5;
     currentStar.style.top = (Math.random() * 100).toString()+"%";
     currentStar.style.left = (Math.random() * 100).toString()+"%";
     if (Math.random() < 0.5) {
-        currentStar.style.transform = "rotate("+(Math.random()*5).toString()+"deg)";
-    } else {
-        currentStar.style.transform = "rotate("+(Math.random()*-5).toString()+"deg)";
+        rotateMult = -1*rotateMult;
     }
     document.body.appendChild(currentStar);
 
     // Animate Star
     let newInterval = setInterval(() => {
-        if (position >= 9) {
+        if (position >= 10) {
             currentStar.style.visibility = "hidden";
         } 
         else if (position === 0) {
@@ -231,6 +248,8 @@ async function animateStar(star, frames) {
         else {
             currentStar.src = frames[position];
         }
+        totalRotate += rotateMult;
+        currentStar.style.transform = "rotate("+(totalRotate).toString()+"deg)";
         position += 1;
     }, time)
 
