@@ -17,11 +17,17 @@ async function main() {
     // Creates and sets the planets, must wait
     await resizeElements(true);
 
-    // Creates audio looper, must wait
-    await initalizeLooper();
-
     // Starts up various other modules, can be started whenever
     initalizeStars();
+
+    // Changes objects when window is resized
+    window.addEventListener("resize", () => {resizeElements(false); scrollChange();});
+
+    // Activates the function to change page based on scroll distance
+    window.addEventListener("scroll", scrollChange);
+
+    // Creates audio looper, must wait
+    await initalizeLooper();
 
     // Starts audio when screen is clicked
     document.addEventListener("click", firstPlay);
@@ -30,12 +36,6 @@ async function main() {
     document.getElementById("musicButton").addEventListener("click", playAudio);
     document.getElementById("musicButton").addEventListener("mouseover", audioButtonHover);
     document.getElementById("musicButton").addEventListener("mouseout", makeAudioButton);
-
-    // Changes objects when window is resized
-    window.addEventListener("resize", () => {resizeElements(false); scrollChange();});
-
-    // Activates the function to change page based on scroll distance
-    window.addEventListener("scroll", scrollChange);
 }
 
 /**
