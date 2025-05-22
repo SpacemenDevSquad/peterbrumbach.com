@@ -78,6 +78,7 @@ p, h1, img, button, div {
     width: inherit;
     margin-top: auto;
     margin-bottom: auto;
+    transition-duration: 0.2s;
 }
 
 #musicButton {
@@ -90,6 +91,7 @@ p, h1, img, button, div {
     border: none;
     align-items: center;
     cursor: pointer;
+    transition-duration: 0.2s;
 }
 
 .footerButton {
@@ -111,7 +113,7 @@ p, h1, img, button, div {
 
 .footerButton:hover {
     color: yellow;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 /*
@@ -124,7 +126,7 @@ p, h1, img, button, div {
     display: inline-flex;
     z-index: 5;
     bottom: 0%;
-    height: 3%;
+    height: 4%;
     width: 100%;
     background-color: #232324;
     align-items: center;

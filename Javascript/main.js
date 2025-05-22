@@ -26,6 +26,18 @@ async function main() {
     // Activates the function to change page based on scroll distance
     window.addEventListener("scroll", scrollChange);
 
+    // Adds redirect listeners to footer buttons
+    document.getElementById("Terms").addEventListener("click", ()=>{redirect("https://www.termsfeed.com/live/41eb87d6-84df-41e5-b737-d8a89a1ebdc3")});
+    document.getElementById("Mystery").addEventListener("click", ()=>{redirect("/videoFile.mp4")});
+
+    // Add expand listeners to footer buttons
+    document.getElementById("Terms").addEventListener("mouseover", ()=>{expand("Terms")});
+    document.getElementById("Sitemap").addEventListener("mouseover", ()=>{expand("Sitemap")});
+    document.getElementById("Mystery").addEventListener("mouseover", ()=>{expand("Mystery")});
+    document.getElementById("Terms").addEventListener("mouseout", resizeText);
+    document.getElementById("Sitemap").addEventListener("mouseout", resizeText);
+    document.getElementById("Mystery").addEventListener("mouseout", resizeText);
+
     // Creates audio looper, must wait
     await initalizeLooper();
 
@@ -36,10 +48,6 @@ async function main() {
     document.getElementById("musicButton").addEventListener("click", playAudio);
     document.getElementById("musicButton").addEventListener("mouseover", audioButtonHover);
     document.getElementById("musicButton").addEventListener("mouseout", makeAudioButton);
-
-    // Adds redirect listeners to buttons
-    document.getElementById("Terms").addEventListener("click", ()=>{redirect("https://www.termsfeed.com/live/41eb87d6-84df-41e5-b737-d8a89a1ebdc3")});
-    document.getElementById("Mystery").addEventListener("click", ()=>{redirect("/videoFile.mp4")});
 }
 
 /**
@@ -109,7 +117,6 @@ async function audioButtonHover() {
     try {
         await hoverAudio.play(); 
     } catch {
-        console.clear();
         console.log("Audio Currently Disabled")
     }
     const audioButton = document.getElementById("musicButton");
@@ -261,6 +268,15 @@ async function resizeText() {
         } else {
             node.style.fontSize = (window.innerWidth/40).toString()+'px';
         }
+    }
+}
+
+async function expand(id) {
+    const node = document.getElementById(id);
+    if (window.innerWidth/40 >= 16) {
+        node.style.fontSize = '17px';
+    } else {
+        node.style.fontSize = (1+window.innerWidth/40).toString()+'px';
     }
 }
 
