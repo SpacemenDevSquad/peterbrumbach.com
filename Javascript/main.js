@@ -248,18 +248,18 @@ async function resizeText() {
     }
     let footerButtons = document.getElementsByClassName("footerButton");
     for (const node of footerButtons) {
-        if (window.innerWidth/30 >= 16) {
+        if (window.innerWidth/40 >= 16) {
             node.style.fontSize = '16px';
         } else {
-            node.style.fontSize = (window.innerWidth/30).toString()+'px';
+            node.style.fontSize = (window.innerWidth/40).toString()+'px';
         }
     }
     let footerLabels = document.getElementsByClassName("footerText");
     for (const node of footerLabels) {
-        if (window.innerWidth/30 >= 16) {
+        if (window.innerWidth/40 >= 16) {
             node.style.fontSize = '16px';
         } else {
-            node.style.fontSize = (window.innerWidth/30).toString()+'px';
+            node.style.fontSize = (window.innerWidth/40).toString()+'px';
         }
     }
 }
