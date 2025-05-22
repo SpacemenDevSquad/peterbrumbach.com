@@ -3,8 +3,6 @@
  * Author Peter Brumbach
  */
 
-// Import Loopify
-
 document.addEventListener("DOMContentLoaded", () => {
     main();
 });
@@ -41,6 +39,9 @@ async function main() {
 
     // Creates audio looper, must wait
     await initalizeLooper();
+
+    // Remove AudioContext warning from console
+    console.clear()
 
     // Starts audio when screen is clicked
     document.addEventListener("click", firstPlay);
