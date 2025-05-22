@@ -1,21 +1,138 @@
+/**
+ * Created 2025
+ * Author Peter Brumbach
+ */
+
+// Import Loopify
+
 document.addEventListener("DOMContentLoaded", () => {
     main();
 });
 
+/**
+ * Main Function, adds listeners and initalizes webpage
+ */
+
 async function main() {
     // Creates and sets the planets, must wait
-    await createPlanets();
+    await resizeElements(true);
+
+    // Creates audio looper, must wait
+    await initalizeLooper();
 
     // Starts up various other modules, can be started whenever
     initalizeStars();
-    // Activates the function to change page based on scroll distance
+
+    // Starts audio when screen is clicked
     document.addEventListener("click", firstPlay);
+
+    // Adds click and hover listeners to audio button
     document.getElementById("musicButton").addEventListener("click", playAudio);
     document.getElementById("musicButton").addEventListener("mouseover", audioButtonHover);
     document.getElementById("musicButton").addEventListener("mouseout", makeAudioButton);
+
+    // Changes objects when window is resized
+    window.addEventListener("resize", () => {resizeElements(false); scrollChange();});
+
+    // Activates the function to change page based on scroll distance
     window.addEventListener("scroll", scrollChange);
 }
 
+/**
+ * Audio Related actions and Audio Button
+ */
+let audioLoop = null;
+let startTime = 0.0;
+let audioTime = 0.0;
+let audioContext = null;
+let audioBuffer = null;
+
+// Create the audioContext and audioBuffer objects
+async function initalizeLooper() {
+    audioContext = new(window.AudioContext || window.webkitAudioContext);
+
+    // Fetch Audio
+    const source = await fetch("/SFX/Music/WebPage Home.mp3");
+    const arrayBuffer = await source.arrayBuffer();
+    audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+}
+
+// Create audio loop
+async function loopPlay() {
+    // Create volume control
+    let gainNode = audioContext.createGain();
+    gainNode.gain.value = 0.3;
+    await gainNode.connect(audioContext.destination)
+
+    // Create audioLoop
+    audioLoop = await audioContext.createBufferSource();
+    audioLoop.loop = true;
+    audioLoop.buffer = audioBuffer;
+    await audioLoop.connect(gainNode);
+    await audioLoop.start(0, audioTime % audioBuffer.duration);
+    startTime = audioContext.currentTime;
+}
+
+async function firstPlay() {
+    // Start audio when user clicks the screen
+    const button = document.getElementById("musicButton");
+    button.childNodes[1].src ="images/volume/volume0.png";
+    loopPlay();
+    document.removeEventListener("click", firstPlay);
+    console.clear();
+    console.log("Audio Currently Enabled")
+}
+
+async function playAudio() {
+    // Toggleable audio with provided button
+    const button = document.getElementById("musicButton");
+    if (audioLoop === null) {
+        await loopPlay();
+        button.childNodes[1].src ="images/volume/volume0.png";
+    } else {
+        audioTime += (audioContext.currentTime - startTime) % audioBuffer.duration;
+        audioLoop.stop();
+        audioLoop = null;
+        flipper = 1;
+        button.childNodes[1].src ="images/volume/volume1.png";
+    }
+}
+
+async function audioButtonHover() {
+    // Changes audio button when cursor hovers over
+    const hoverAudio = new Audio("/SFX/blipSelect.wav");
+    hoverAudio.volume = 0.05;
+    try {
+        await hoverAudio.play(); 
+    } catch {
+        console.clear();
+        console.log("Audio Currently Disabled")
+    }
+    const audioButton = document.getElementById("musicButton");
+    if (window.innerHeight < window.innerWidth) {
+        audioButton.style.height = (window.innerHeight/9).toString()+"px";
+    } else {
+        audioButton.style.height = (window.innerWidth/9).toString()+"px";
+    }
+    audioButton.style.width = audioButton.style.height;
+}
+
+async function makeAudioButton() {
+    // Resizes the audio buutton to fit the screen
+    const audioButton = document.getElementById("musicButton");
+    if (window.innerHeight < window.innerWidth) {
+        audioButton.style.height = (window.innerHeight/10).toString()+"px";
+    } else {
+        audioButton.style.height = (window.innerWidth/10).toString()+"px";
+    }
+    audioButton.style.width = audioButton.style.height;
+}
+
+/**
+ * Actions by the user (resize, scrolling) functions
+ */
+
+// Changes positions of objects based on scroll distance
 async function scrollChange() {
     // Get Green Planet
     const greenplanet = document.getElementById("GreenPlanet");
@@ -32,45 +149,26 @@ async function scrollChange() {
     );
 }
 
-async function firstPlay() {
-    // Start audio when user clicks the screen
-    const player = document.getElementById("mediaPlayer");
-    const button = document.getElementById("musicButton");
-    player.volume = 0.5;
-    player.play();
-    button.childNodes[1].src ="images/volume/volume0.png";
-    document.removeEventListener("click", firstPlay);
+// Resizes all elements to fit the window
+// first is true when the user loads the page for the first time
+async function resizeElements(first) {
+    // Create planets
+    let greenplanet = makeGreenPlanet(first);
+    let audioButton = makeAudioButton();
+
+    // Wait for all planets to be ready
+    await greenplanet;
+    await audioButton;
 }
 
-async function playAudio() {
-    // Toggleable audio with provided button
-    const player = document.getElementById("mediaPlayer");
-    const button = document.getElementById("musicButton");
-    if (player.paused) {
-        player.play();
-        button.childNodes[1].src ="images/volume/volume0.png";
-    } else {
-        player.pause()
-        button.childNodes[1].src ="images/volume/volume1.png";
-    }
-}
+/**
+ * Background star functions
+ */
 
-async function audioButtonHover() {
-    const hoverAudio = new Audio("/SFX/blipSelect.wav");
-    hoverAudio.volume = 0.05;
-    try {
-        await hoverAudio.play(); 
-    } catch {
-        console.clear();
-        console.log("Audio Currently Disabled")
-    }
-    const audioButton = document.getElementById("musicButton");
-    audioButton.style.height = (window.innerHeight/9).toString()+"px";
-    audioButton.style.width = audioButton.style.height;
-}
-
+// Create the default blinking star
 async function initalizeStars() {
 
+    // Time interval to spawn a star (milliseconds)
     const time = 200;
 
     const star0 = "/images/stars/star0.png";
@@ -88,8 +186,8 @@ async function initalizeStars() {
     }, time)
 }
 
+// Copies from default star, places on random spot on screen then animates
 async function animateStar(star, frames) {
-
     // Create Star
     const currentStar = star.cloneNode(true);
     let position = 0;
@@ -122,31 +220,21 @@ async function animateStar(star, frames) {
     setTimeout( ()=> {
         clearInterval(newInterval);
         document.body.removeChild(currentStar);
-    }, time*12)
-    
+    }, time*12)   
 }
 
-async function createPlanets() {
-    // Create planets
-    let greenplanet = makeGreenPlanet();
-    let audioButton = makeAudioButton();
+/**
+ * Resizing planets
+ */
 
-    // Wait for all planets to be ready
-    await greenplanet;
-    await audioButton;
-}
-
-async function makeAudioButton() {
-    const audioButton = document.getElementById("musicButton");
-    audioButton.style.height = (window.innerHeight/10).toString()+"px";
-    audioButton.style.width = audioButton.style.height;
-}
-
-async function makeGreenPlanet() {
+// Resize the first green planet based on window size
+async function makeGreenPlanet(first) {
     // Initialize Green Planet with attributes
     const greenplanet = document.getElementById("GreenPlanet");
     greenplanet.style.height = (window.innerHeight/5).toString()+"px";
     greenplanet.style.width = greenplanet.style.height;
-    greenplanet.style.transform = "translate("+(-greenplanet.width).toString()+"px)";
+    if (first) {
+        greenplanet.style.transform = "translate("+(-greenplanet.width).toString()+"px)";
+    }
     greenplanet.style.visibility = "visible";
 }
