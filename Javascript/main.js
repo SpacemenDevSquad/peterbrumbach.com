@@ -36,6 +36,10 @@ async function main() {
     document.getElementById("musicButton").addEventListener("click", playAudio);
     document.getElementById("musicButton").addEventListener("mouseover", audioButtonHover);
     document.getElementById("musicButton").addEventListener("mouseout", makeAudioButton);
+
+    // Adds redirect listeners to buttons
+    document.getElementById("Terms").addEventListener("click", ()=>{redirect("https://www.termsfeed.com/live/41eb87d6-84df-41e5-b737-d8a89a1ebdc3")});
+    document.getElementById("Mystery").addEventListener("click", ()=>{redirect("/videoFile.mp4")});
 }
 
 /**
@@ -129,7 +133,7 @@ async function makeAudioButton() {
 }
 
 /**
- * Actions by the user (resize, scrolling) functions
+ * Actions by the user (resize, scrolling, clicking) functions
  */
 
 // Changes positions of objects based on scroll distance
@@ -161,6 +165,11 @@ async function resizeElements(first) {
     await greenplanet;
     await audioButton;
     await allText;
+}
+
+// Takes user to a designated URL
+async function redirect(url) {
+    window.location.href = url;
 }
 
 /**
@@ -233,6 +242,22 @@ async function resizeText() {
     for (const node of whiteText) {
         if (node.tagName.toLowerCase() === 'h1') {
             node.style.fontSize = (window.innerWidth/15).toString()+'px';
+        } else {
+            node.style.fontSize = (window.innerWidth/30).toString()+'px';
+        }
+    }
+    let footerButtons = document.getElementsByClassName("footerButton");
+    for (const node of footerButtons) {
+        if (window.innerWidth/30 >= 16) {
+            node.style.fontSize = '16px';
+        } else {
+            node.style.fontSize = (window.innerWidth/30).toString()+'px';
+        }
+    }
+    let footerLabels = document.getElementsByClassName("footerText");
+    for (const node of footerLabels) {
+        if (window.innerWidth/30 >= 16) {
+            node.style.fontSize = '16px';
         } else {
             node.style.fontSize = (window.innerWidth/30).toString()+'px';
         }
