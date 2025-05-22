@@ -1,17 +1,17 @@
 @font-face {
     font-family: Roboto;
-    src: url('./fonts/robotoslab-webfont.woff2') format('woff2'),
-         url('./fonts/robotoslab-webfont.woff') format('woff'),
-         url('./fonts/RobotoSlab.ttf') format('truetype');
+    src: url('https://peterbrumbach.com/fonts/robotoslab-webfont.woff2') format('woff2'),
+         url('https://peterbrumbach.com/fonts/robotoslab-webfont.woff') format('woff'),
+         url('https://peterbrumbach.com/fonts/RobotoSlab.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: Pixel;
-    src: url('/fonts/pixel-webfont.woff2') format('woff2'),
-         url('/fonts/pixel-webfont.woff') format('woff'),
-         url('/fonts/pixel.ttf') format('truetype');
+    src: url('https://peterbrumbach.com/fonts/pixel-webfont.woff2') format('woff2'),
+         url('https://peterbrumbach.com/fonts/pixel-webfont.woff') format('woff'),
+         url('https://peterbrumbach.com/fonts/pixel.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
