@@ -155,10 +155,12 @@ async function resizeElements(first) {
     // Create planets
     let greenplanet = makeGreenPlanet(first);
     let audioButton = makeAudioButton();
+    let allText = resizeText();
 
     // Wait for all planets to be ready
     await greenplanet;
     await audioButton;
+    await allText;
 }
 
 /**
@@ -221,6 +223,20 @@ async function animateStar(star, frames) {
         clearInterval(newInterval);
         document.body.removeChild(currentStar);
     }, time*12)   
+}
+
+/**
+ * Changing/Resizing Text
+ */
+async function resizeText() {
+    let whiteText = document.getElementsByClassName("whiteText");
+    for (const node of whiteText) {
+        if (node.tagName.toLowerCase() === 'h1') {
+            node.style.fontSize = (window.innerWidth/15).toString()+'px';
+        } else {
+            node.style.fontSize = (window.innerWidth/30).toString()+'px';
+        }
+    }
 }
 
 /**
