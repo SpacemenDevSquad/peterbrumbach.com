@@ -58,7 +58,12 @@ async function playAudio() {
 async function audioButtonHover() {
     const hoverAudio = new Audio("/SFX/blipSelect.wav");
     hoverAudio.volume = 0.05;
-    hoverAudio.play(); 
+    try {
+        await hoverAudio.play(); 
+    } catch {
+        console.clear();
+        console.log("Audio Currently Disabled")
+    }
     const audioButton = document.getElementById("musicButton");
     audioButton.style.height = (window.innerHeight/9).toString()+"px";
     audioButton.style.width = audioButton.style.height;
