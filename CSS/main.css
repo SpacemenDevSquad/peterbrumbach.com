@@ -51,6 +51,7 @@ p, h1, img, button, div {
     z-index: 10;
     padding: 0%;
     user-select: none;
+    width: 80%;
 }
 
 .footerText {
