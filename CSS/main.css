@@ -31,7 +31,7 @@ html, body {
     width: 100%;
 }
 
-p, h1, img, button {
+p, h1, img, button, div {
     overflow-x: hidden;
 }
 
