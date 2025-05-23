@@ -187,11 +187,14 @@ async function resizeElements(first) {
     // Wait for gray planet to resize text
     await largeGrayPlanet;
     let allText = resizeText();
+    let resizeGrayPlanetText = grayPlanetText();
 
     // Wait for all planets to be ready
     await greenplanet;
     await audioButton;
     await allText;
+    await resizeGrayPlanetText;
+    document.getElementById("grayPlanetText").style.visibility = "visible";
 }
 
 // Takes user to a designated URL
@@ -324,6 +327,7 @@ async function resizeText() {
     grayPlanetText.style.fontSize = (grayPlanet.width/30).toString()+'px';
 }
 
+// Highlights footer buttons when cursor hovers
 async function expand(id) {
     const node = document.getElementById(id);
     if (window.innerWidth/40 >= 16) {
@@ -333,6 +337,7 @@ async function expand(id) {
     }
 }
 
+// Sets grayPlanetText on top of largeGrayPlanet
 async function grayPlanetText() {
     const grayPlanet = document.getElementById("largeGrayPlanet");
     const grayPlanetText = document.getElementById("grayPlanetText");
