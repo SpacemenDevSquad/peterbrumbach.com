@@ -283,6 +283,8 @@ async function animateStar(star, frames) {
  * Changing/Resizing Text
  */
 async function resizeText() {
+
+    // White Intro Text
     let whiteText = document.getElementsByClassName("whiteText");
     for (const node of whiteText) {
         if (node.tagName.toLowerCase() === 'h1') {
@@ -291,6 +293,8 @@ async function resizeText() {
             node.style.fontSize = (window.innerWidth/30).toString()+'px';
         }
     }
+
+    // Footer Text Elements
     let footerButtons = document.getElementsByClassName("footerButton");
     for (const node of footerButtons) {
         if (window.innerWidth/40 >= 16) {
@@ -307,6 +311,9 @@ async function resizeText() {
             node.style.fontSize = (window.innerWidth/40).toString()+'px';
         }
     }
+    // Resize div bar based on font size
+    // Yeah have fun looking at that
+    document.getElementById("footer").style.height = (2*parseInt((footerLabels[0].style.fontSize.toString().slice(0, -2)))).toString() + 'px';
 
     // Gray Planet Text
     const grayPlanet = document.getElementById("largeGrayPlanet");
