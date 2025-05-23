@@ -9,7 +9,7 @@ async function main() {
     window.addEventListener("resize", resizeElements);
 
     // Adds redirect listeners to footer buttons
-    document.getElementById("Terms").addEventListener("click", ()=>{redirect("https://www.termsfeed.com/live/41eb87d6-84df-41e5-b737-d8a89a1ebdc3")});
+    document.getElementById("Terms").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/TOS")});
     document.getElementById("Sitemap").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/sitemap")});
     document.getElementById("Mystery").addEventListener("click", ()=>{redirect("/videoFile.mp4")});
 
@@ -44,6 +44,9 @@ async function sitemapText() {
     const titleText = (window.innerWidth/15).toString()+'px';
     const headerText = (window.innerWidth/30).toString()+'px';
     const linkText = (window.innerWidth/60).toString()+'px';
+    const link = (window.innerWidth/58).toString()+'px';
+    document.styleSheets[0].deleteRule(0);
+    document.styleSheets[0].insertRule('a:hover {font-size: '+link+'}', 0)
 
     // Setting all the text nodes
     const titleNodes = document.getElementsByClassName("title");

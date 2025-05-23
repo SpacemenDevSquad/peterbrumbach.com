@@ -26,7 +26,8 @@ async function main() {
     window.addEventListener("scroll", scrollChange);
 
     // Adds redirect listeners to footer buttons
-    document.getElementById("Terms").addEventListener("click", ()=>{redirect("https://www.termsfeed.com/live/41eb87d6-84df-41e5-b737-d8a89a1ebdc3")});
+    document.getElementById("Terms").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/TOS")});
+    document.getElementById("Sitemap").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/sitemap")});
     document.getElementById("Mystery").addEventListener("click", ()=>{redirect("/videoFile.mp4")});
 
     // Add expand listeners to footer buttons
