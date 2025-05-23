@@ -29,6 +29,15 @@ html, body {
     height: 5000px;
     overflow-x: hidden;
     width: 100%;
+
+    /* Hide Scrollbars */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Hide Scrollbars Part 2 */
+body::-webkit-scrollbar, body::-webkit-scrollbar-button { 
+    display: none; 
 }
 
 p, h1, img, button, div {
