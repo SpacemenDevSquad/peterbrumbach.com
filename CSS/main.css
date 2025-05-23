@@ -67,6 +67,31 @@ p, h1, img, button, div {
     color: white;
 }
 
+.planetText {
+    position: fixed;
+    display: block;
+    align-items: center;
+    text-align: center;
+    user-select: none;
+
+    width: 80%;
+    margin: 0;
+    left: 0;
+    z-index: 10;
+
+    color: white;
+    font-family: Roboto Slab;
+}
+
+p.planetText {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+div.planetText {
+    display: flex;
+}
+
 /*
 * Music and Button Elements CSS
 */
@@ -146,6 +171,8 @@ p, h1, img, button, div {
     height: 0px;
     z-index: 10;
     user-select: none;
+    align-items: center;
+    text-align: center;
 }
 
 .star {
@@ -164,4 +191,8 @@ p, h1, img, button, div {
 
 #GreenPlanet {
     top: 20%;
+}
+
+#largeGrayPlanet {
+    top:20%
 }

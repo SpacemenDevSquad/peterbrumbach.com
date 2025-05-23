@@ -40,9 +40,6 @@ async function main() {
     // Creates audio looper, must wait
     await initalizeLooper();
 
-    // Remove AudioContext warning from console
-    console.clear()
-
     // Starts audio when screen is clicked
     document.addEventListener("click", firstPlay);
 
@@ -149,17 +146,34 @@ async function makeAudioButton() {
 async function scrollChange() {
     // Get Green Planet
     const greenplanet = document.getElementById("GreenPlanet");
+    const largeGrayPlanet = document.getElementById("largeGrayPlanet");
 
     // Constant variables, calculate the path of the green planet
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
     const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const width = window.innerWidth + greenplanet.width;
+    const width = window.innerWidth;
     const percent = (scrollPosition)/totalScroll;
+    let modPercent = 0;
 
     // Animate Green Planet
-    requestAnimationFrame( () =>
-        greenplanet.style.transform = "translate("+(width*percent - greenplanet.width).toString()+"px)"
-    );
+    requestAnimationFrame( () => {
+        // Green Planet Movement
+        if (percent < 0.3) {
+            modPercent = percent/0.3;
+            greenplanet.style.transform = "translate("+((width+greenplanet.width)*modPercent - greenplanet.width).toString()+"px)";
+        } else {
+            greenplanet.style.transform = "translate("+(width).toString()+"px)";
+        }
+        // Large Gray Planet Movement
+        if ((0.05 < percent) && (percent < 0.5)) {
+            modPercent = (percent-0.05)/0.45;
+            largeGrayPlanet.style.transform = "translate("+((width+largeGrayPlanet.width)*modPercent - largeGrayPlanet.width).toString()+"px)";
+            grayPlanetText();
+        } else {
+            largeGrayPlanet.style.transform = "translate("+(width).toString()+"px)";
+            grayPlanetText();
+        }
+    });
 }
 
 // Resizes all elements to fit the window
@@ -167,7 +181,11 @@ async function scrollChange() {
 async function resizeElements(first) {
     // Create planets
     let greenplanet = makeGreenPlanet(first);
+    let largeGrayPlanet = makeLargeGrayPlanet(first);
     let audioButton = makeAudioButton();
+
+    // Wait for gray planet to resize text
+    await largeGrayPlanet;
     let allText = resizeText();
 
     // Wait for all planets to be ready
@@ -289,6 +307,14 @@ async function resizeText() {
             node.style.fontSize = (window.innerWidth/40).toString()+'px';
         }
     }
+
+    // Gray Planet Text
+    const grayPlanet = document.getElementById("largeGrayPlanet");
+    const grayPlanetText = document.getElementById("grayPlanetText");
+    grayPlanetText.style.top = window.getComputedStyle(grayPlanet).top.toString();
+    grayPlanetText.style.width = grayPlanet.width.toString()+'px';
+    grayPlanetText.style.height = grayPlanet.height.toString()+'px';
+    grayPlanetText.style.fontSize = (grayPlanet.width/30).toString()+'px';
 }
 
 async function expand(id) {
@@ -298,6 +324,12 @@ async function expand(id) {
     } else {
         node.style.fontSize = (1+window.innerWidth/40).toString()+'px';
     }
+}
+
+async function grayPlanetText() {
+    const grayPlanet = document.getElementById("largeGrayPlanet");
+    const grayPlanetText = document.getElementById("grayPlanetText");
+    grayPlanetText.style.transform = grayPlanet.style.transform.toString();
 }
 
 /**
@@ -314,4 +346,16 @@ async function makeGreenPlanet(first) {
         greenplanet.style.transform = "translate("+(-greenplanet.width).toString()+"px)";
     }
     greenplanet.style.visibility = "visible";
+}
+
+// Resize the large gray planet based on window size
+async function makeLargeGrayPlanet(first) {
+    // Initialize Green Planet with attributes
+    const planet = document.getElementById("largeGrayPlanet");
+    planet.style.height = (window.innerHeight/1.5).toString()+"px";
+    planet.style.width = planet.style.height;
+    if (first) {
+        planet.style.transform = "translate("+(-planet.width).toString()+"px)";
+    }
+    planet.style.visibility = "visible";
 }
