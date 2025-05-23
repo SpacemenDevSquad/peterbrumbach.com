@@ -11,7 +11,7 @@ async function main() {
     // Adds redirect listeners to footer buttons
     document.getElementById("Terms").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/TOS")});
     document.getElementById("Sitemap").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/sitemap")});
-    document.getElementById("Mystery").addEventListener("click", ()=>{redirect("/videoFile.mp4")});
+    document.getElementById("Mystery").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/GetWrecked")});
 
     // Add hover effects to footer buttons
     document.getElementById("Terms").addEventListener("mouseover", ()=>{requestAnimationFrame(()=> {expandButton("Terms")})});
@@ -44,7 +44,7 @@ async function sitemapText() {
     const titleText = (window.innerWidth/15).toString()+'px';
     const headerText = (window.innerWidth/30).toString()+'px';
     const linkText = (window.innerWidth/60).toString()+'px';
-    const link = (window.innerWidth/58).toString()+'px';
+    const link = (window.innerWidth/56).toString()+'px';
     document.styleSheets[0].deleteRule(0);
     document.styleSheets[0].insertRule('a:hover {font-size: '+link+'}', 0)
 

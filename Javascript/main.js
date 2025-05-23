@@ -28,7 +28,7 @@ async function main() {
     // Adds redirect listeners to footer buttons
     document.getElementById("Terms").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/TOS")});
     document.getElementById("Sitemap").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/sitemap")});
-    document.getElementById("Mystery").addEventListener("click", ()=>{redirect("/videoFile.mp4")});
+    document.getElementById("Mystery").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/GetWrecked")});
 
     // Add expand listeners to footer buttons
     document.getElementById("Terms").addEventListener("mouseover", ()=>{requestAnimationFrame(()=> {expand("Terms")})});
