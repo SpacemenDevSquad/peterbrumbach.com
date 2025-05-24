@@ -37,33 +37,6 @@ async function resizeElements() {
 }
 
 /**
- * Sitemap text and links
- */
-async function sitemapText() {
-    // Text node size
-    const titleText = (window.innerWidth/15).toString()+'px';
-    const headerText = (window.innerWidth/30).toString()+'px';
-    const linkText = (window.innerWidth/60).toString()+'px';
-    const link = (window.innerWidth/56).toString()+'px';
-    document.styleSheets[0].deleteRule(0);
-    document.styleSheets[0].insertRule('a:hover {font-size: '+link+'}', 0)
-
-    // Setting all the text nodes
-    const titleNodes = document.getElementsByClassName("title");
-    const headerNodes = document.getElementsByClassName("header");
-    const linkNodes = document.getElementsByClassName("link");
-    for(const node of titleNodes) {
-        node.style.fontSize = titleText;
-    }
-    for(const node of headerNodes) {
-        node.style.fontSize = headerText;
-    }
-    for(const node of linkNodes) {
-        node.style.fontSize = linkText;
-    }
-}
-
-/**
  * Functions related to background stars
  */
 async function smallStars(){
