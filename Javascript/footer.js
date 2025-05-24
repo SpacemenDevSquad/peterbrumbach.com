@@ -1,12 +1,19 @@
+/**
+ * Created 2025
+ * Peter Brumbach
+ * 
+ * Load onto every html page, used to get footer on page and working
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
-    main();
+    footerMain();
 });
 
-async function main() {
-    resizeElements();
+async function footerMain() {
+    resizeFooter()
 
     // Resize elements when window size is changed
-    window.addEventListener("resize", resizeElements);
+    window.addEventListener("resize", resizeFooter);
 
     // Adds redirect listeners to footer buttons
     document.getElementById("Terms").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/TOS")});
@@ -17,52 +24,13 @@ async function main() {
     document.getElementById("Terms").addEventListener("mouseover", ()=>{requestAnimationFrame(()=> {expandButton("Terms")})});
     document.getElementById("Sitemap").addEventListener("mouseover", ()=>{requestAnimationFrame(()=> {expandButton("Sitemap")})});
     document.getElementById("Mystery").addEventListener("mouseover", ()=>{requestAnimationFrame(()=> {expandButton("Mystery")})});
-    document.getElementById("Terms").addEventListener("mouseout", ()=>{requestAnimationFrame(footerText)});
-    document.getElementById("Sitemap").addEventListener("mouseout", ()=>{requestAnimationFrame(footerText)});
-    document.getElementById("Mystery").addEventListener("mouseout", ()=>{requestAnimationFrame(footerText)});
-
-    // Start this task last, renders the background stars
-    smallStars();
+    document.getElementById("Terms").addEventListener("mouseout", ()=>{requestAnimationFrame(resizeFooter)});
+    document.getElementById("Sitemap").addEventListener("mouseout", ()=>{requestAnimationFrame(resizeFooter)});
+    document.getElementById("Mystery").addEventListener("mouseout", ()=>{requestAnimationFrame(resizeFooter)});
 }
 
-async function resizeElements() {
-
-    // Resize Elements when screen changes
-    let resizeFooterText = footerText();
-    let resizeSitemapText = sitemapText();
-
-    // Wait for all elements to be ready
-    await resizeFooterText;
-    await resizeSitemapText;
-}
-
-/**
- * Functions related to background stars
- */
-async function smallStars(){
-    // Constant Variables
-    const starAmount = 300;
-
-    // Create the default background star
-    const defaultStar = new Image();
-    defaultStar.className = "star";
-    defaultStar.style.width = (window.innerHeight/300).toString()+"px";
-    defaultStar.style.height = defaultStar.style.width;
-    defaultStar.src = "/images/stars/smallStar.png";
-
-    // Copy the default star and randomize it somewhere onscreen
-    for (let i = 0; i < 200; i++) {
-        const currentStar = defaultStar.cloneNode(true);
-        currentStar.style.top = (Math.random() * 100).toString()+"%";
-        currentStar.style.left = (Math.random() * 100).toString()+"%";
-        document.body.appendChild(currentStar);
-    }
-}
-
-/**
- * All functions related to footer bar
- */
-async function footerText() {
+// Resize the footer bar to fit the site page
+async function resizeFooter() {
     // Footer Text Elements
     let footerButtons = document.getElementsByClassName("footerButton");
     for (const node of footerButtons) {
@@ -85,6 +53,7 @@ async function footerText() {
     document.getElementById("footer").style.height = (2*parseInt((footerLabels[0].style.fontSize.toString().slice(0, -2)))).toString() + 'px';
 }
 
+// Expand button when cursor hovers over it
 async function expandButton(id) {
     const node = document.getElementById(id);
     if (window.innerWidth/40 >= 16) {
@@ -94,7 +63,7 @@ async function expandButton(id) {
     }
 }
 
-// Takes user to a designated URL
+// Redirect to designated url when clicked
 async function redirect(url) {
     window.location.href = url;
 }

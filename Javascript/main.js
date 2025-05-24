@@ -17,26 +17,12 @@ async function main() {
 
     // Starts up various other modules, can be started whenever
     initalizeStars();
-    smallStars();
 
     // Changes objects when window is resized
     window.addEventListener("resize", () => {resizeElements(false); scrollChange();});
 
     // Activates the function to change page based on scroll distance
     window.addEventListener("scroll", scrollChange);
-
-    // Adds redirect listeners to footer buttons
-    document.getElementById("Terms").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/TOS")});
-    document.getElementById("Sitemap").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/sitemap")});
-    document.getElementById("Mystery").addEventListener("click", ()=>{redirect("https://peterbrumbach.com/GetWrecked")});
-
-    // Add expand listeners to footer buttons
-    document.getElementById("Terms").addEventListener("mouseover", ()=>{requestAnimationFrame(()=> {expand("Terms")})});
-    document.getElementById("Sitemap").addEventListener("mouseover", ()=>{requestAnimationFrame(()=> {expand("Sitemap")})});
-    document.getElementById("Mystery").addEventListener("mouseover", ()=>{requestAnimationFrame(()=> {expand("Mystery")})});
-    document.getElementById("Terms").addEventListener("mouseout", ()=>{requestAnimationFrame(resizeText)});
-    document.getElementById("Sitemap").addEventListener("mouseout", ()=>{requestAnimationFrame(resizeText)});
-    document.getElementById("Mystery").addEventListener("mouseout", ()=>{requestAnimationFrame(resizeText)});
 
     // Creates audio looper, must wait
     await initalizeLooper();
@@ -198,11 +184,6 @@ async function resizeElements(first) {
     document.getElementById("grayPlanetText").style.visibility = "visible";
 }
 
-// Takes user to a designated URL
-async function redirect(url) {
-    window.location.href = url;
-}
-
 /**
  * Background star functions
  */
@@ -226,22 +207,6 @@ async function initalizeStars() {
     setInterval(() => {
         animateStar(defaultStar, starArray)
     }, time)
-}
-
-// Make tons of tiny little stars float on the screen
-async function smallStars(){
-    const defaultStar = new Image();
-    defaultStar.className = "star";
-    defaultStar.style.width = (window.innerHeight/300).toString()+"px";
-    defaultStar.src = "/images/stars/smallStar.png";
-    defaultStar.style.height = defaultStar.style.width;
-    defaultStar.style.visibility = "visible";
-    for (let i = 0; i < 200; i++) {
-        const currentStar = defaultStar.cloneNode(true);
-        currentStar.style.top = (Math.random() * 100).toString()+"%";
-        currentStar.style.left = (Math.random() * 100).toString()+"%";
-        document.body.appendChild(currentStar);
-    }
 }
 
 // Copies from default star, places on random spot on screen then animates
@@ -297,28 +262,6 @@ async function resizeText() {
             node.style.fontSize = (window.innerWidth/30).toString()+'px';
         }
     }
-
-    // Footer Text Elements
-    let footerButtons = document.getElementsByClassName("footerButton");
-    for (const node of footerButtons) {
-        if (window.innerWidth/40 >= 16) {
-            node.style.fontSize = '16px';
-        } else {
-            node.style.fontSize = (window.innerWidth/40).toString()+'px';
-        }
-    }
-    let footerLabels = document.getElementsByClassName("footerText");
-    for (const node of footerLabels) {
-        if (window.innerWidth/40 >= 16) {
-            node.style.fontSize = '16px';
-        } else {
-            node.style.fontSize = (window.innerWidth/40).toString()+'px';
-        }
-    }
-    // Resize div bar based on font size
-    // Yeah have fun looking at that
-    document.getElementById("footer").style.height = (2*parseInt((footerLabels[0].style.fontSize.toString().slice(0, -2)))).toString() + 'px';
-
     // Gray Planet Text
     const grayPlanet = document.getElementById("largeGrayPlanet");
     const grayPlanetText = document.getElementById("grayPlanetText");
@@ -326,16 +269,6 @@ async function resizeText() {
     grayPlanetText.style.width = grayPlanet.width.toString()+'px';
     grayPlanetText.style.height = grayPlanet.height.toString()+'px';
     grayPlanetText.style.fontSize = (grayPlanet.width/30).toString()+'px';
-}
-
-// Highlights footer buttons when cursor hovers
-async function expand(id) {
-    const node = document.getElementById(id);
-    if (window.innerWidth/40 >= 16) {
-        node.style.fontSize = '17px';
-    } else {
-        node.style.fontSize = (1+window.innerWidth/40).toString()+'px';
-    }
 }
 
 // Sets grayPlanetText on top of largeGrayPlanet

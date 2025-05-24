@@ -1,0 +1,21 @@
+/*
+* Fonts
+*/
+
+@font-face {
+    font-family: Roboto Slab;
+    src: url('https://peterbrumbach.com/fonts/robotoslab-webfont.woff2') format('woff2'),
+         url('https://peterbrumbach.com/fonts/robotoslab-webfont.woff') format('woff'),
+         url('https://peterbrumbach.com/fonts/RobotoSlab.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Pixelify Sans;
+    src: url('https://peterbrumbach.com/fonts/pixel-webfont.woff2') format('woff2'),
+         url('https://peterbrumbach.com/fonts/pixel-webfont.woff') format('woff'),
+         url('https://peterbrumbach.com/fonts/pixel.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
