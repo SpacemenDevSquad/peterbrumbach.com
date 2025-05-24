@@ -1,0 +1,61 @@
+/* Change footer colors */
+#footer {background-color: #583907;}
+.footerButton:hover {color: red;}
+
+/* Background */
+html {
+    overflow-x: hidden;
+    background-color: #3E86A1;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: none;
+}
+
+/* Block Object Settings */
+#image {width: 100%;}
+
+#ground, #background {
+    overflow-x: hidden;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+
+    left: -25%;
+    width: 150%;
+}
+
+#ground {
+    height: 40vh;
+    bottom: -10%;
+}
+
+#background {
+    left: 0;
+    width: 80%;
+    bottom: 27vh;
+}
+
+#logo {
+    display: block;
+    margin: auto;
+    user-select: none;
+    z-index: 10;
+
+    width: inherit;
+    max-width: 70vh;
+}
+
+h1 {
+    text-align: center;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+
+    font-family: Pixelify Sans;
+    font-size: 4vw;
+    color: white;
+}

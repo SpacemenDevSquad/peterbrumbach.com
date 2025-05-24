@@ -68,33 +68,6 @@ div.planetText {
 }
 
 /*
-* Music and Button Elements CSS
-*/
-.buttonimg {
-    visibility: inherit;
-    position: fixed;
-    z-index: inherit;
-    height: inherit;
-    width: inherit;
-    margin-top: auto;
-    margin-bottom: auto;
-    transition-duration: 0.2s;
-}
-
-#musicButton {
-    visibility: visible;
-    position: fixed;
-    z-index: 10;
-    top: 0%;
-    right: 5%;
-    background: none;
-    border: none;
-    align-items: center;
-    cursor: pointer;
-    transition-duration: 0.2s;
-}
-
-/*
 * Space Elements CSS
 */
 .planet {

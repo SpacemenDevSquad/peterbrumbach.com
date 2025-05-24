@@ -5,6 +5,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     main();
+    audioButtonMain("/SFX/Music/WebPage Home.mp3");
 });
 
 /**
@@ -23,106 +24,6 @@ async function main() {
 
     // Activates the function to change page based on scroll distance
     window.addEventListener("scroll", scrollChange);
-
-    // Creates audio looper, must wait
-    await initalizeLooper();
-
-    // Starts audio when screen is clicked
-    document.addEventListener("click", firstPlay);
-
-    // Adds click and hover listeners to audio button
-    document.getElementById("musicButton").addEventListener("click", playAudio);
-    document.getElementById("musicButton").addEventListener("mouseover", audioButtonHover);
-    document.getElementById("musicButton").addEventListener("mouseout", makeAudioButton);
-}
-
-/**
- * Audio Related actions and Audio Button
- */
-let audioLoop = null;
-let startTime = 0.0;
-let audioTime = 0.0;
-let audioContext = null;
-let audioBuffer = null;
-
-// Create the audioContext and audioBuffer objects
-async function initalizeLooper() {
-    audioContext = new(window.AudioContext || window.webkitAudioContext);
-
-    // Fetch Audio
-    const source = await fetch("/SFX/Music/WebPage Home.mp3");
-    const arrayBuffer = await source.arrayBuffer();
-    audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-}
-
-// Create audio loop
-async function loopPlay() {
-    // Create volume control
-    let gainNode = audioContext.createGain();
-    gainNode.gain.value = 0.3;
-    await gainNode.connect(audioContext.destination)
-
-    // Create audioLoop
-    audioLoop = await audioContext.createBufferSource();
-    audioLoop.loop = true;
-    audioLoop.buffer = audioBuffer;
-    await audioLoop.connect(gainNode);
-    await audioLoop.start(0, audioTime % audioBuffer.duration);
-    startTime = audioContext.currentTime;
-}
-
-async function firstPlay() {
-    // Start audio when user clicks the screen
-    const button = document.getElementById("musicButton");
-    button.childNodes[1].src ="images/volume/volume0.png";
-    loopPlay();
-    document.removeEventListener("click", firstPlay);
-    console.clear();
-    console.log("Audio Currently Enabled")
-}
-
-async function playAudio() {
-    // Toggleable audio with provided button
-    const button = document.getElementById("musicButton");
-    if (audioLoop === null) {
-        await loopPlay();
-        button.childNodes[1].src ="images/volume/volume0.png";
-    } else {
-        audioTime += (audioContext.currentTime - startTime) % audioBuffer.duration;
-        audioLoop.stop();
-        audioLoop = null;
-        flipper = 1;
-        button.childNodes[1].src ="images/volume/volume1.png";
-    }
-}
-
-async function audioButtonHover() {
-    // Changes audio button when cursor hovers over
-    const hoverAudio = new Audio("/SFX/blipSelect.wav");
-    hoverAudio.volume = 0.05;
-    try {
-        await hoverAudio.play(); 
-    } catch {
-        console.log("Audio Currently Disabled")
-    }
-    const audioButton = document.getElementById("musicButton");
-    if (window.innerHeight < window.innerWidth) {
-        audioButton.style.height = (window.innerHeight/9).toString()+"px";
-    } else {
-        audioButton.style.height = (window.innerWidth/9).toString()+"px";
-    }
-    audioButton.style.width = audioButton.style.height;
-}
-
-async function makeAudioButton() {
-    // Resizes the audio buutton to fit the screen
-    const audioButton = document.getElementById("musicButton");
-    if (window.innerHeight < window.innerWidth) {
-        audioButton.style.height = (window.innerHeight/10).toString()+"px";
-    } else {
-        audioButton.style.height = (window.innerWidth/10).toString()+"px";
-    }
-    audioButton.style.width = audioButton.style.height;
 }
 
 /**
