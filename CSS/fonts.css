@@ -23,5 +23,6 @@
 /* Mouse Cursor */
 
 html {
+    min-height: 100%;
     cursor: url('/images/cursors/Cursor1.png'), default;
 }
