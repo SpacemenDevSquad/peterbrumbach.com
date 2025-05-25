@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function main() {
     // Creates and sets the planets, must wait
     await resizeElements(true);
+    scrollChange();
 
     // Starts up various other modules, can be started whenever
     initalizeStars();
