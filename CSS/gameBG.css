@@ -1,0 +1,14 @@
+html {
+    background-color: black;
+}
+
+iframe {
+    position: fixed;
+    border: none;
+    width: 100vw;
+    height: 99vh;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}

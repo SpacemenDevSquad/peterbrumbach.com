@@ -11,6 +11,7 @@ html {
 body {
     overflow-x: hidden;
     background-color: none;
+    padding-bottom: 5%;
 }
 
 /* Block Object Settings */
@@ -28,14 +29,14 @@ body {
 }
 
 #ground {
-    height: 40vh;
+    height: 40svh;
     bottom: -10%;
 }
 
 #background {
     left: 0;
-    width: 80%;
-    bottom: 27vh;
+    width: 100%;
+    bottom: 27svh;
 }
 
 #logo {
@@ -45,17 +46,103 @@ body {
     z-index: 10;
 
     width: inherit;
-    max-width: 70vh;
+    max-width: 60vh;
 }
 
 h1 {
     text-align: center;
     user-select: none;
     margin: 0;
-    padding: 0;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
     z-index: 10;
 
     font-family: Pixelify Sans;
     font-size: 4vw;
     color: white;
+}
+
+
+/* Description */
+#description {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    background-image: url("/images/PW/Bluebg.png");
+    background-size: 80vw 35vw;
+
+    width: 80vw;
+    height: 35vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 2vh;
+}
+
+#descCenter {
+    display: block;
+    align-items: center;
+    user-select: none;
+    text-align: center;
+
+    width: 84%;
+    margin-left: 8%;
+    margin-right: 8%;
+
+    color: white;
+    font-family: Roboto Slab;
+    font-size: 2vw;
+    line-height: 1.2;
+}
+
+/* Play Button */
+
+#playButton {
+    transition-duration: 0.5s;
+    user-select: none;
+    display: block;
+    margin: auto;
+    margin-top: 4vh;
+
+    width: 30vw;
+    height: 15.8vw;
+
+    border: none;
+    background: none;
+    background-image: url("/images/PW/rButton/rButton1.png");
+    background-size: 30vw 15.8vw;
+
+    font-family: Pixelify Sans;
+    font-size: 5vw;
+    text-align: center;
+    color: yellow;
+
+    cursor: pointer;
+}
+
+#playButton:hover {
+    background-image: url("/images/PW/rButton/rButton2.png");
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#playButton:active {
+    background-image: url("/images/PW/rButton/rButton3.png");
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#playButtonText {
+    margin: 0;
+    padding-top: 3.4vw;
+    padding-bottom: 7.4vw;
+}
+
+#playButtonText:active {
+    padding-top: 4.2vw;
+    padding-bottom: 6.6vw;
 }
