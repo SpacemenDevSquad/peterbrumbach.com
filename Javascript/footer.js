@@ -68,7 +68,7 @@ async function resizeFooter() {
 async function getVerse() {
 
     // Get JSON, the verse node, and make a random number
-    const rawData = await fetch("https://peterbrumbach.com/JSON/verses.json");
+    const rawData = await fetch("https://peterbrumbach.com/api/verses.json");
     const bibleVerse = document.getElementById("verse");
 
     // Validate JSON file and get random number
