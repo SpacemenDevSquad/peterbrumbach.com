@@ -129,6 +129,7 @@ h1 {
     background: none;
     background-image: url("/images/PW/rButton/rButton1.png");
     background-size: 30vw 15.8vw;
+    border-radius: 2vw;
 
     font-family: Pixelify Sans;
     font-size: 5vw;
@@ -141,13 +142,15 @@ h1 {
 #playButton:hover {
     background-image: url("/images/PW/rButton/rButton2.png");
     color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: black;
+    box-shadow: 0 12px 20px 15px rgba(255, 255, 255, 0.24);
 }
 
 #playButton:active {
     background-image: url("/images/PW/rButton/rButton3.png");
     color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: black;
+    box-shadow: 0 12px 20px 15px rgba(255, 255, 255, 0.24);
 }
 
 a {
