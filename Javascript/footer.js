@@ -75,7 +75,6 @@ async function getVerse() {
     const verses = await validateJSON(rawData);
     const numOfVerses = Object.keys(verses).length;
     const randomNum = Math.floor(Math.random()*numOfVerses).toString();
-    console.log(randomNum);
 
     // Set verse to random value from JSON file
     bibleVerse.innerText = verses[randomNum];
