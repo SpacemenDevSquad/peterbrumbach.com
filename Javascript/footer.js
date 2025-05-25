@@ -52,10 +52,10 @@ async function resizeFooter() {
 
     // Resize Bible Verse
     const bibleVerse = document.getElementById("verse");
-    if (window.innerWidth/75 >= 15) {
+    if (window.innerWidth/78 >= 15) {
         bibleVerse.style.fontSize = '15px';
     } else {
-        bibleVerse.style.fontSize = (window.innerWidth/75).toString()+'px';
+        bibleVerse.style.fontSize = (window.innerWidth/78).toString()+'px';
     }
     bibleVerse.style.height = (1.5*parseInt((bibleVerse.style.fontSize.toString().slice(0, -2)))).toString() + 'px';
     // Resize div bar based on font size
