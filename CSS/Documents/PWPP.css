@@ -1,0 +1,43 @@
+/* Change footer colors */
+#footer {background-color: #583907;}
+.footerButton:hover {color: red;}
+#verse {
+    background-color: #583907;
+    color: white;
+}
+
+/*
+* Global CSS
+*/
+html, body {
+    background-color: #3E86A1;
+    overflow-x: hidden;
+    height: auto;
+    width: auto;
+}
+
+/*
+* TOS Text
+*/
+h1, h2, h3, p, ul, li {
+    font-family: Roboto Slab;
+    color: white;
+
+    z-index: 10;
+}
+
+a {
+    transition-duration: 0.5s;
+}
+
+a:link, a:visited {
+    color: white;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
