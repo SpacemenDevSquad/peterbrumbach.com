@@ -1,0 +1,42 @@
+/* Override footer default colors */
+#footer {background-color: rgb(102, 27, 27);}
+.footerButton:hover {color: green;}
+#verse {
+    background-color: rgb(102, 27, 27);
+    color: white;
+}
+
+/*
+* Global CSS
+*/
+html, body {
+    overflow-x: hidden;
+    background-color: #2a2760;
+    padding-bottom: 2%;
+}
+
+/*
+* TOS Text
+*/
+h1, h2, h3, p, ul, li {
+    font-family: Roboto Slab;
+    color: white;
+
+    z-index: 10;
+}
+
+a {
+    transition-duration: 0.5s;
+}
+
+a:link, a:visited {
+    color: white;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+    font-size: 1.2rem;
+}

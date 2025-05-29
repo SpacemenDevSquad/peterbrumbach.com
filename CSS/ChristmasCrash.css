@@ -64,31 +64,41 @@ h1 {
     display: flex;
     align-items: center;
     user-select: none;
-    background-color: rgb(102, 27, 27);
-    background-size: 80vw 35vw;
-    border-radius: 3vw;
 
     width: 80vw;
     height: 20vw;
+    margin: 3vh;
     margin-left: 10vw;
     margin-right: 10vw;
-    margin-top: 2vh;
 }
 
 #descCenter {
     display: block;
-    align-items: center;
     user-select: none;
     text-align: center;
 
+    background-color: rgb(102, 27, 27);
+    border-radius: 3vw;
+
     width: 84%;
-    margin-left: 8%;
-    margin-right: 8%;
+    padding: 4%;
+    margin: 0;
+    margin-left: 4%;
+    margin-right: 4%;
 
     color: white;
     font-family: Christmas;
     font-size: 2vw;
     line-height: 1.2;
+}
+
+#descVideo {
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 3vw;
+
+    width: 40vw;
+    height: 25vw;
 }
 
 /* Link */
