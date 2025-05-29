@@ -1,3 +1,11 @@
+/**
+ * Created 2025
+ * Peter Brumbach
+ * 
+ * Adds a looping background song to html page using specified url
+ * Can be toggled/paused using onscreen button
+ */
+
 async function audioButtonMain(url) {
     // Inital Functions
     makeAudioButton();

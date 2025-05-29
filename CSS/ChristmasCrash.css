@@ -1,0 +1,106 @@
+/* Override footer default colors */
+#footer {background-color: rgb(102, 27, 27);}
+.footerButton:hover {color: green;}
+#verse {
+    background-color: rgb(102, 27, 27);
+    color: white;
+}
+
+
+/* Background */
+html {
+    overflow-x: hidden;
+    background-color: #2a2760;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: none;
+    padding-bottom: 5%;
+}
+
+#background {
+    overflow-x: hidden;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+
+    left: -5%;
+    width: 120%;
+    top: 60%;
+}
+
+/* Block Object Settings */
+#image {width: 100%;}
+
+#logo {
+    display: block;
+    margin: auto;
+    user-select: none;
+    border-radius: 20%;
+    z-index: 10;
+
+    width: 60vw;
+    max-width: 70vh;
+}
+
+h1 {
+    text-align: center;
+    user-select: none;
+    margin: 0;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    z-index: 10;
+    
+    font-family: Christmas;
+    font-size: 4vw;
+    color: white;
+}
+
+
+/* Description */
+#description {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    background-color: rgb(102, 27, 27);
+    background-size: 80vw 35vw;
+    border-radius: 3vw;
+
+    width: 80vw;
+    height: 20vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 2vh;
+}
+
+#descCenter {
+    display: block;
+    align-items: center;
+    user-select: none;
+    text-align: center;
+
+    width: 84%;
+    margin-left: 8%;
+    margin-right: 8%;
+
+    color: white;
+    font-family: Christmas;
+    font-size: 2vw;
+    line-height: 1.2;
+}
+
+/* Link */
+#link {
+    transition-duration: 0.4s;
+}
+
+#link:link, #link:visited {
+    color: white;
+}
+
+#link:hover {
+    font-size: 2.2vw;
+    color: green;
+}
