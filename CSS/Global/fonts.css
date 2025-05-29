@@ -20,6 +20,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: Christmas;
+    src: url('https://peterbrumbach.com/fonts/mountainsofchristmas-regular-webfont.woff2') format('woff2'),
+         url('https://peterbrumbach.com/fonts/mountainsofchristmas-regular-webfont.woff') format('woff'),
+         url('https://peterbrumbach.com/fonts/MountainsofChristmas-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Mouse Cursor */
 
 html {
