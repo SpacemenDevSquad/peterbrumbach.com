@@ -12,12 +12,56 @@ document.addEventListener("DOMContentLoaded", () => {
 async function snowMain() {
     await defaultSnow();
     snowfall();
+    document.addEventListener('mousemove', (event) => {
+        cursorX = event.pageX - window.innerWidth/2;
+    });
 }
 
 /**
  * Creates the default snowflake
+ * Also contains default variables
  */
 let defaultSnowflake = null;
+let defaultScreenFall = 0.7;
+let defaultWindMod = 3;
+let defaultFallSpeed = 20;
+let spawnTime = 100;
+let cursorModify = 0;
+let cursorX = 0;
+
+// Sets the distance the snow will fall (1.0 is bottom of body)
+async function setScreenFall(decimal) {
+    defaultScreenFall = decimal;
+}
+
+// Modifies the wind
+// Snow will go more right with positive integers
+// Reverse is true for negative
+async function setWind(decimal) {
+    defaultWindMod = decimal;
+}
+
+// Sets the pixel amount that the snow will fall by
+// Only positive integers
+async function setFallSpeed(decimal) {
+    if (decimal <= 0) {
+        return;
+    }
+    defaultFallSpeed = decimal;
+}
+
+// Spawns in snowflakes every X milliseconds
+// Default is 100 milliseconds
+async function setSpawnTime(milliSec) {
+    spawnTime = milliSec;
+}
+
+// Allows cursor to modify the wind
+// Default is 0
+async function setCursorModify(decimal) {
+    cursorModify = decimal;
+}
+
 
 async function defaultSnow(){
     // Create the snowflake template
@@ -31,8 +75,7 @@ async function defaultSnow(){
 
 async function snowfall() {
 
-    const milliSeconds = 100;
-    const speedFall = 100;
+    const frameTime = 100;
 
     setInterval(()=> {
         const newSnow = defaultSnowflake.cloneNode(true);
@@ -42,13 +85,13 @@ async function snowfall() {
         let totalDrift = 0
         document.body.appendChild(newSnow);
         const movement = setInterval(()=>{
-            totalFall += 20;
-            totalDrift += Math.random()*3 + 3;
-            requestAnimationFrame(()=>{newSnow.style.transform = 'translate('+totalDrift.toString()+'px, '+totalFall.toString()+'px)';});
-            if (totalFall > window.innerHeight*0.7) {
+            if (totalFall > window.innerHeight*defaultScreenFall) {
                 document.body.removeChild(newSnow);
                 clearInterval(movement);
             }
-        }, speedFall)
-    }, milliSeconds)
+            totalFall += defaultFallSpeed;
+            totalDrift += Math.random()*defaultWindMod + defaultWindMod + cursorX*cursorModify;
+            requestAnimationFrame(()=>{newSnow.style.transform = 'translate('+totalDrift.toString()+'px, '+totalFall.toString()+'px)';});
+        }, frameTime)
+    }, spawnTime)
 }

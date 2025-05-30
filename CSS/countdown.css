@@ -1,0 +1,71 @@
+/* Override footer default colors */
+#footer {background-color: rgb(66, 19, 19);}
+.footerButton:hover {color: green;}
+#verse {
+    background-color: rgb(66, 19, 19);
+    color: white;
+}
+
+/* Modify Snow */
+.snow {
+    z-index: 0;
+}
+
+/* Background CSS */
+body, html {
+    background-color: rgb(102, 27, 27);
+    overflow: hidden;
+    height: 100%;
+    z-index: -5;
+}
+
+body {
+    background-color: none;
+}
+
+/* Alignment divs */
+#vertical {
+    display: flex;
+    align-items: center;
+    user-select: none;
+
+    height: 80%;
+    width: 100%;
+}
+
+#horizontal {
+    display: block;
+    align-items: center;
+
+    width: 100%;
+}
+
+/* Countdown Text */
+h1, h2, #link {
+    text-align: center;
+    user-select: none;
+    width: 100%;
+    margin: 2px;
+
+    text-shadow: 4px 2px 3px rgb(0, 0, 0);
+    font-family: Christmas;
+    font-size: 3vw;
+    color: white;
+}
+
+.number {
+    font-family: festive;
+    font-size: 10vw;
+}
+
+a:link, a:visited {
+    color: white;
+}
+a:hover {
+    color: green;
+    font-size: 3.5vw;
+}
+
+a {
+    transition-duration: 0.5s;
+}
