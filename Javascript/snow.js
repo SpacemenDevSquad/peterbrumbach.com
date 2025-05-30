@@ -91,7 +91,8 @@ async function snowfall() {
             }
             totalFall += defaultFallSpeed;
             totalDrift += Math.random()*defaultWindMod + defaultWindMod + cursorX*cursorModify;
-            requestAnimationFrame(()=>{newSnow.style.transform = 'translate('+totalDrift.toString()+'px, '+totalFall.toString()+'px)';});
+            //window.requestAnimationFrame(()=>{newSnow.style.transform = 'translate('+totalDrift.toString()+'px, '+totalFall.toString()+'px)';});
+            newSnow.style.transform = 'translate('+totalDrift.toString()+'px, '+totalFall.toString()+'px)';
         }, frameTime)
     }, spawnTime)
 }
