@@ -4,17 +4,17 @@
 
 @font-face {
     font-family: Roboto Slab;
-    src: url('https://peterbrumbach.com/fonts/robotoslab-webfont.woff2') format('woff2'),
-         url('https://peterbrumbach.com/fonts/robotoslab-webfont.woff') format('woff'),
-         url('https://peterbrumbach.com/fonts/RobotoSlab.ttf') format('truetype');
+    src: url('https://peterbrumbach.com/fonts/roboto.woff2') format('woff2'),
+         url('https://peterbrumbach.com/fonts/roboto.woff') format('woff'),
+         url('https://peterbrumbach.com/fonts/roboto.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: Pixelify Sans;
-    src: url('https://peterbrumbach.com/fonts/pixel-webfont.woff2') format('woff2'),
-         url('https://peterbrumbach.com/fonts/pixel-webfont.woff') format('woff'),
+    src: url('https://peterbrumbach.com/fonts/pixel.woff2') format('woff2'),
+         url('https://peterbrumbach.com/fonts/pixel.woff') format('woff'),
          url('https://peterbrumbach.com/fonts/pixel.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -22,9 +22,9 @@
 
 @font-face {
     font-family: Christmas;
-    src: url('https://peterbrumbach.com/fonts/mountainsofchristmas-regular-webfont.woff2') format('woff2'),
-         url('https://peterbrumbach.com/fonts/mountainsofchristmas-regular-webfont.woff') format('woff'),
-         url('https://peterbrumbach.com/fonts/MountainsofChristmas-Regular.ttf') format('truetype');
+    src: url('https://peterbrumbach.com/fonts/christmas.woff2') format('woff2'),
+         url('https://peterbrumbach.com/fonts/christmas.woff') format('woff'),
+         url('https://peterbrumbach.com/fonts/christmas.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
