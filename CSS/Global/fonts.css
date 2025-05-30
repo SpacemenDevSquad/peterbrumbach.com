@@ -29,6 +29,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: Festive;
+    src: url('https://peterbrumbach.com/fonts/festive.woff2') format('woff2'),
+         url('https://peterbrumbach.com/fonts/festive.woff') format('woff'),
+         url('https://peterbrumbach.com/fonts/festive.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Mouse Cursor */
 
 html {
