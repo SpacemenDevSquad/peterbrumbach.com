@@ -48,7 +48,7 @@ h1, h2, #link {
     width: 100%;
     margin: 2px;
 
-    text-shadow: 4px 2px 3px rgb(0, 0, 0);
+    text-shadow: 0.3vw 0.3vw 3px rgb(0, 0, 0);
     font-family: Christmas;
     font-size: 3vw;
     color: white;
