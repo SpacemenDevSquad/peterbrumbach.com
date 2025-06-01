@@ -13,6 +13,7 @@
 
 /* Background CSS */
 body, html {
+    cursor: url("/images/cursors/Green.png"), default;
     background-color: rgb(102, 27, 27);
     overflow: hidden;
     height: 100%;

@@ -8,6 +8,7 @@
 
 /* Background */
 html {
+    cursor: url("/images/cursors/Red.png"), default;
     overflow-x: hidden;
     background-color: #3E86A1;
 }

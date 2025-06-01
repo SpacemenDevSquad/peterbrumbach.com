@@ -1,5 +1,6 @@
 /* Background */
 html {
+    cursor: url("/images/cursors/Yellow.png"), default;
     overflow-x: hidden;
     background-color: black;
 }

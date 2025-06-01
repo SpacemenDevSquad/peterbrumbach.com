@@ -10,6 +10,7 @@
 * Global CSS
 */
 html, body {
+    cursor: url("/images/cursors/Green.png"), default;
     overflow-x: hidden;
     background-color: #2a2760;
     padding-bottom: 2%;
