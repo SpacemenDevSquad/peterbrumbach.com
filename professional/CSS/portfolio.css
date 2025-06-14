@@ -1,0 +1,206 @@
+/* Windows and divs */
+
+html {
+    background-color: black;
+    overflow: hidden;
+}
+
+#app, #backgroundFade, #content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+#app {
+    background-color: black;
+    background-image: url("/images/farm.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#content {
+    user-select: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-color: #1f1f1f black;
+    z-index: 5;
+}
+
+#backgroundFade {
+    background-color: black;
+    opacity: 60%;
+    z-index: 2;
+}
+
+.divider {
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    width: 90%;
+    height: 1%;
+
+    background-color: black;
+    opacity: 70%;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 90%;
+    margin: auto;
+}
+
+#innerBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    height: 100%;
+    margin: auto;
+}
+
+#socialMedia {
+    display: block;
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    
+    width: 10%;
+    height: 75%;
+}
+
+#footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 80px;
+    width: 100%;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: black;
+}
+
+/* Default settings */
+
+h1, h2 {
+    margin-top: 40px;
+    margin-bottom: 0;
+    width: 100%;
+
+    font-family: Savate;
+    text-shadow: 2px 4px 3px black;
+    color: white;
+    opacity: 0%;
+
+    text-align: center;
+    transition-duration: 1.0s;
+}
+
+p {
+    margin: auto;
+    
+    align-self: center;
+    text-align: left;
+
+    font-family: Roboto Slab;
+    font-size: 2vw;
+    color: white;
+    text-shadow: 0.07vw 0.15vw black; 
+}
+
+menu {
+    justify-self: flex-start;
+    align-self: flex-start;
+
+    line-height: 3.5vw;
+    color: white;
+    font-family: Roboto Slab;
+    font-size: 1.5svw;
+}
+
+ul {
+    text-align: left;
+    list-style-type: none;
+
+    font-family: Roboto Slab;
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+}
+
+em {
+    font-size: 3vw;
+    text-shadow: 0.07vw 0.15vw black;
+}
+
+/* Images/Links */
+
+#profile {
+    width: 60%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+}
+
+a {
+    transition-duration: 0.7s;
+}
+
+a:link, a:visited {
+    color: yellow;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(0, 200, 0);
+    text-decoration: underline;
+    font-size: calc(var(--fontSize));
+}
+
+.footerlinks:hover {
+    font-size: 16px;
+}
+
+.social {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    transition-duration: 0.5s;
+    width: 100%;
+    filter: saturate(100%);
+}
+
+.social:hover {
+    width: 110%;
+    filter: brightness(0) invert(34%) sepia(85%) saturate(7089%) hue-rotate(142deg) brightness(98%) contrast(94%);
+}
+
+/* Other ids and classes */
+
+#welcome {
+    font-size: 15vw;
+
+    margin-left: 5%;
+    text-align: left;
+}
+
+#subtitle {
+    font-size: 2em;
+    text-shadow: 1px 2px 1px black;
+
+    margin-left: 5%;
+    text-align: left;
+}

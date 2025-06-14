@@ -1,0 +1,20 @@
+/*
+* Fonts
+*/
+
+@font-face {
+    font-family: Roboto Slab;
+    src: url('https://peterbrumbach.com/fonts/roboto.woff2') format('woff2'),
+         url('https://peterbrumbach.com/fonts/roboto.woff') format('woff'),
+         url('https://peterbrumbach.com/fonts/roboto.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Savate;
+    src: url('https://peterbrumbach.com/fonts/savate.woff2') format('woff2'),
+         url('https://peterbrumbach.com/fonts/savate.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
