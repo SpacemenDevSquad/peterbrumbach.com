@@ -22,6 +22,7 @@ html {
 }
 
 #content {
+    -webkit-user-select: none; 
     user-select: none;
     overflow-y: scroll;
     overflow-x: hidden;

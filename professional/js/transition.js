@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 })
 
 async function startup() {
-    document.getElementById("transition").style.zIndex = 0;
+    document.getElementById("transition").style.zIndex = -5;
     document.getElementById("blackBlock").style.width = 0;
     document.getElementById("blackBlock").style.left = '';
     document.getElementById("blackBlock").style.right = '';
@@ -62,7 +62,7 @@ async function revealTransition() {
         setTimeout(()=>{
             blackBlock.style.width = '0';
             const transInterval = setInterval(()=>{
-                document.getElementById("transition").style.zIndex = 0;
+                document.getElementById("transition").style.zIndex = -5;
                 resolve();
                 clearInterval(transInterval);
             }, timer)
