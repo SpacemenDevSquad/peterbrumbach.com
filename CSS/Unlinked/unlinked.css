@@ -1,0 +1,45 @@
+html, body {
+    background-color: black;
+}
+
+h1, h2, p, li {
+    user-select: none;
+    font-family: Roboto Slab;
+    color: white;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+menu {
+    line-height: 1.5em;
+}
+
+#centerBox {
+    margin: auto;
+    margin-top: 10%;
+    z-index: 10;
+
+    width: 60%;
+}
+
+a {
+    transition-duration: 0.7s;
+}
+
+a:link, a:visited {
+    color: yellow;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    font-size: 1.2em;
+    text-decoration: underline;
+}

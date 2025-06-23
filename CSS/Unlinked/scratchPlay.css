@@ -1,0 +1,19 @@
+html {
+    background-color: black;
+    height: 93%;
+    z-index: -10;
+}
+
+body {
+    height: 93%;
+}
+
+embed {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.smallStar{
+    z-index: -1;
+}

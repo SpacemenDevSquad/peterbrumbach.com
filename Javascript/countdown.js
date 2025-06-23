@@ -1,3 +1,10 @@
+/**
+ * Created 2025
+ * Peter Brumbach
+ * 
+ * Counts down the days until Christmas
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
     countMain();
 });
