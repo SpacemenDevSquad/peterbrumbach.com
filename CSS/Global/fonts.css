@@ -21,7 +21,7 @@
 }
 
 @font-face {
-    font-family: Jersey 10;
+    font-family: Jersey;
     src: url('https://peterbrumbach.com/fonts/jersey10.woff2') format('woff2'),
          url('https://peterbrumbach.com/fonts/jersey10.woff') format('woff'),
          url('https://peterbrumbach.com/fonts/jersey10.ttf') format('truetype');
