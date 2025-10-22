@@ -21,6 +21,15 @@
 }
 
 @font-face {
+    font-family: Jersey 10;
+    src: url('https://peterbrumbach.com/fonts/jersey10.woff2') format('woff2'),
+         url('https://peterbrumbach.com/fonts/jersey10.woff') format('woff'),
+         url('https://peterbrumbach.com/fonts/jersey10.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: Christmas;
     src: url('https://peterbrumbach.com/fonts/christmas.woff2') format('woff2'),
          url('https://peterbrumbach.com/fonts/christmas.woff') format('woff'),
