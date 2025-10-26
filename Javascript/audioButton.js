@@ -70,7 +70,7 @@ function loopPlay() {
 async function firstPlay() {
     // Start audio when user clicks the screen
     const button = document.getElementById("musicButton");
-    button.childNodes[1].src ="images/volume/volume0.png";
+    button.childNodes[1].src ="/images/volume/volume0.png";
     loopPlay();
     document.removeEventListener("click", firstPlay);
     console.clear();
@@ -82,13 +82,13 @@ async function playAudio() {
     const button = document.getElementById("musicButton");
     if (audioLoop === null) {
         await loopPlay();
-        button.childNodes[1].src ="images/volume/volume0.png";
+        button.childNodes[1].src ="/images/volume/volume0.png";
     } else {
         audioTime += (audioContext.currentTime - startTime) % audioBuffer.duration;
         audioLoop.stop();
         audioLoop = null;
         flipper = 1;
-        button.childNodes[1].src ="images/volume/volume1.png";
+        button.childNodes[1].src ="/images/volume/volume1.png";
     }
 }
 

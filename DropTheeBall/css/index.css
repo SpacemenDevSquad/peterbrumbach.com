@@ -1,0 +1,135 @@
+/* Change footer colors */
+#footer {background-color: #788d01;}
+.footerButton:hover {color: yellow;}
+#verse {
+    background-color: #788d01;
+    color: white;
+}
+
+/*
+* Global CSS
+*/
+html, body {
+    cursor: url("/images/DTB/DropBall\ Cursor.png"), default;
+    background-color: #2c2314;
+    overflow-x: hidden;
+    height: auto;
+    width: auto;
+}
+
+body {
+    background-color: transparent;
+}
+
+/*
+* Fireflies
+*/
+.firefly {
+    transition-duration: 0.1s;
+    position: fixed;
+    z-index: -1;
+    width: 5px;
+    height: 5px;
+
+    background-color: yellow;
+    box-shadow: 0 0 80px 30px #ffff2c;
+}
+
+/*
+* Logo
+*/
+#image {
+    display: block;
+    width: 100%;
+}
+#logo {
+    display: inherit;
+    width: 65vw;
+    margin: auto;
+}
+
+/* iframe */
+iframe {
+    user-select: none;
+    margin-top: 4vh;
+    margin-left: 30%;
+    width: 40%;
+}
+
+/*
+* Text / Description Box
+*/
+h1, p, a {
+    transition-duration: 0.5s;
+    color: white;
+    text-align: center;
+    font-family: Jersey;
+}
+
+h1 {
+    width: 100%;
+    font-size: 4vw;
+}
+
+#link:hover {
+    font-size: 3vw;
+    color: yellow;
+}
+
+#description {
+    display: block;
+    margin: auto;
+    padding: 40px;
+    width: 80%;
+
+    text-align: center;
+    border-radius: 30px;
+    background-color: #788d01;
+    box-shadow: 12px 12px #4c5900;
+}
+
+#descCenter {
+    font-size: 2.5vw;
+}
+
+/*
+* Play Button
+*/
+
+#playButton {
+    transition-duration: 0.5s;
+    display: block;
+    margin: auto;
+    width: 20%;
+
+    font-size: 3vw;
+    border-radius: 20px;
+    background-color: #788d01;
+    box-shadow: 6px 6px #4c5900;
+}
+
+#playButton:hover {
+    background-color: #ffe100;
+    box-shadow: 0 6px #bfa900, 0 17px 50px #bfa900;
+}
+
+#playButton:active {
+    background-color: #ffe100;
+    box-shadow: 0 0 #bfa900, 0 17px 50px #000000;
+    transform: translate(0, 6px);
+}
+
+#playButton p:hover { 
+    color: black;
+}
+
+#playButton p {
+    margin: 0px;
+    padding-top: 3.4vw;
+    padding-bottom: 3.4vw;
+    text-decoration: none;
+}
+
+#playButton a {
+    text-decoration: none;
+}
