@@ -23,6 +23,8 @@
 
 		div#gameContainer canvas {
 			position: absolute;
+			-webkit-user-select: none;
+			user-select: none;
 		}
 
 		div#gameContainer canvas[data-pixel-art="true"] {
@@ -42,18 +44,19 @@
 
 <body>
 	<div id="gameContainer">
-		<canvas id="unity-canvas" data-pixel-art=""></canvas>
-		<script src="Build/Build 2.loader.js"></script>
+		<canvas id="unity-canvas" width="960" height="600" data-pixel-art=""></canvas>
+		<script src="Build/Build 3.loader.js"></script>
 		<script>
 			var canvas = document.querySelector("#unity-canvas");
 			var config = {
-				dataUrl: "Build/Build 2.data.unityweb",
-				frameworkUrl: "Build/Build 2.framework.js.unityweb",
-				codeUrl: "Build/Build 2.wasm.unityweb",
+				dataUrl: "Build/Build 3.data.unityweb",
+				frameworkUrl: "Build/Build 3.framework.js.unityweb",
+				codeUrl: "Build/Build 3.wasm.unityweb",
 				streamingAssetsUrl: "StreamingAssets",
 				companyName: "SpacemenDevSquad",
 				productName: "Drop Thee Ball",
 				productVersion: "1.0.1",
+				autoSyncPersistentDataPath: true,
 			};
 			var scaleToFit;
 			try {
@@ -63,8 +66,8 @@
 			}
 			function progressHandler(progress) {
 				var percent = progress * 100 + '%';
-				canvas.style.background = 'linear-gradient(to right, green, blue ' + percent + ', transparent ' + percent + ', transparent) no-repeat center';
-				canvas.style.backgroundSize = '50% 1rem';
+				canvas.style.background = 'linear-gradient(to right, green, blue  ' + percent + ', transparent ' + percent + ', transparent) no-repeat center';
+				canvas.style.backgroundSize = '100% 1rem';
 			}
 			function onResize() {
 				var container = canvas.parentElement;
@@ -90,6 +93,7 @@
 				container.style.height = canvas.style.height = h + "px";
 				container.style.top = Math.floor((window.innerHeight - h) / 2) + "px";
 				container.style.left = Math.floor((window.innerWidth - w) / 2) + "px";
+				window.focus();
 			}
 			createUnityInstance(canvas, config, progressHandler).then(function (instance) {
 				canvas = instance.Module.canvas;
