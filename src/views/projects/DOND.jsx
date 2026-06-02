@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 
 // Components
-import Footer from '../components/footer.jsx';
+import Footer from '../../components/footer.jsx';
 
 // CSS
-import '../css/themes/DOND.css'
+import '../../css/themes/DOND.css'
 
 // Javascript
 
 // Images
-import favicon from '../assets/images/DOND/DDIcon.png';
-import thumbnail from '../assets/images/DOND/DONDThumbnail.png';
+import favicon from '../../assets/images/DOND/DDIcon.png';
+import thumbnail from '../../assets/images/DOND/DONDThumbnail.png';
 
 const DONDHome = () => {
 

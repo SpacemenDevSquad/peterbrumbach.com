@@ -1,25 +1,25 @@
 import React, { useEffect } from 'react';
 
 // Components
-import Footer from '../components/footer.jsx';
-import AudioButton from '../components/audioButton.jsx';
+import Footer from '../../components/footer.jsx';
+import AudioButton from '../../components/audioButton.jsx';
 
 // CSS
-import '../css/themes/PW.css'
+import '../../css/themes/PW.css'
 
 // Javascript
-import cloudsMain from '../js/clouds.js';
+import cloudsMain from '../../js/clouds.js';
 
 // Assets
-import favicon from '../assets/images/PW/PWIcon.png';
-import DesertBackground from '../assets/images/PW/Desert Background.png';
-import Thumbnail from '../assets/images/PW/PWThumbnail.png';
-import Dirt from '../assets/images/PW/Dirt.png';
-import PWSong from '../assets/music/PWTheme.mp3';
+import favicon from '../../assets/images/PW/PWIcon.png';
+import DesertBackground from '../../assets/images/PW/Desert Background.png';
+import Thumbnail from '../../assets/images/PW/PWThumbnail.png';
+import Dirt from '../../assets/images/PW/Dirt.png';
+import PWSong from '../../assets/music/PWTheme.mp3';
 
-import Button1 from '../assets/images/PW/rButton/rButton1.png';
-import Button2 from '../assets/images/PW/rButton/rButton2.png';
-import Button3 from '../assets/images/PW/rButton/rButton3.png';
+import Button1 from '../../assets/images/PW/rButton/rButton1.png';
+import Button2 from '../../assets/images/PW/rButton/rButton2.png';
+import Button3 from '../../assets/images/PW/rButton/rButton3.png';
 
 const PWHome = () => {
 

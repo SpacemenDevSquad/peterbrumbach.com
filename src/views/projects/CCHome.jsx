@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
 
 // Components
-import Footer from '../components/footer.jsx';
+import Footer from '../../components/footer.jsx';
 
 // CSS
-import '../css/themes/ChristmasCrash.css'
-import '../css/global/snow.css'
+import '../../css/themes/ChristmasCrash.css'
+import '../../css/global/snow.css'
 
 // Javascript
-import snowMain from '../js/snow.js';
+import snowMain from '../../js/snow.js';
 
 // Assets
-import favicon from '../assets/images/ChristmasCrash/Christmas Crash Icon.jpg';
-import BackHills from '../assets/images/ChristmasCrash/BackHills.png';
-import Icon from '../assets/images/ChristmasCrash/Christmas Crash Icon.jpg'
-import promoVideo from '../assets/videos/Christmas Crasher.mp4'
+import favicon from '../../assets/images/ChristmasCrash/Christmas Crash Icon.jpg';
+import BackHills from '../../assets/images/ChristmasCrash/BackHills.png';
+import Icon from '../../assets/images/ChristmasCrash/Christmas Crash Icon.jpg'
+import promoVideo from '../../assets/videos/Christmas Crasher.mp4'
 
 const CCHome = () => {
 

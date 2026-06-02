@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 
 // Components
-import Footer from '../components/footer.jsx';
+import Footer from '../../components/footer.jsx';
 
 // CSS
-import '../css/global/gameBG.css'
+import '../../css/global/gameBG.css'
 
 // Images
-import favicon from '../assets/images/DOND/DDIcon.png';
+import favicon from '../../assets/images/PW/PWIcon.png';
 
-const DONDHome = () => {
+const PWPlay = () => {
 
     useEffect(() => {
         // Document title & favicon
@@ -17,15 +17,15 @@ const DONDHome = () => {
         link.rel = "icon";
         link.href = favicon;
         document.head.appendChild(link);
-        document.title = "Deal or No Deal: Web Player";
+        document.title = "Pointless Wars: Web Player";
     })
 
     return (
     <>
-        <iframe src="/webApps/dondGame/DONDGame.html" title="DOND Player"></iframe>
+        <iframe src="/webApps/pwGame/PWgame.html" title="PW Player"></iframe>
         <Footer/>
     </>
     );
 }
 
-export default DONDHome;
+export default PWPlay;

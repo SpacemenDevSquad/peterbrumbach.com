@@ -5,11 +5,7 @@
  * Adds fireflies to the background
  */
 
-document.addEventListener("DOMContentLoaded", () => {
-    startCreation();
-});
-
-async function startCreation() {
+async function startFireflyCreation() {
     await makeDefault();
     for (let count = 0; count < 20; count++) {
         createFireflies();
@@ -46,3 +42,5 @@ async function createFireflies() {
         }, intervalTime/20);
     }, intervalTime);
 }
+
+export default startFireflyCreation;

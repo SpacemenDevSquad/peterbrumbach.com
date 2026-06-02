@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 
 // Components
-import Footer from '../components/footer.jsx';
+import Footer from '../../components/footer.jsx';
 
 // CSS
-import '../css/documents/CCPP.css'
+import '../../css/documents/PWPP.css'
 
 // Assets
-import favicon from '../assets/images/ChristmasCrash/Christmas Crash Icon.jpg';
+import favicon from '../../assets/images/PW/PWIcon.png';
 
-const CCPP = () => {
+const PWPP = () => {
 
     useEffect(() => {
         // Document title & favicon
@@ -17,13 +17,13 @@ const CCPP = () => {
         link.rel = "icon";
         link.href = favicon;
         document.head.appendChild(link);
-        document.title = "Christmas Crash: Privacy Policy";
+        document.title = "Pointless Wars: Privacy Policy";
     })
 
     return (
     <>
         <h1>Privacy Policy</h1>
-        <p>Last updated: June 1, 2026</p>
+        <p>Last updated: June 2, 2026</p>
         <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
         <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.termsfeed.com/privacy-policy-generator/" target="_blank">Privacy Policy Generator</a>.</p>
         <h1>Interpretation and Definitions</h1>
@@ -39,10 +39,10 @@ const CCPP = () => {
         <p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
         </li>
         <li>
-        <p><strong>Application</strong> refers to Christmas Crash, the software program provided by the Company.</p>
+        <p><strong>Application</strong> refers to Pointless Wars, the software program provided by the Company.</p>
         </li>
         <li>
-        <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Christmas Crash.</p>
+        <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Pointless Wars.</p>
         </li>
         <li>
         <p><strong>Country</strong> refers to: Pennsylvania,  United States</p>
@@ -164,4 +164,4 @@ const CCPP = () => {
     );
 }
 
-export default CCPP;
+export default PWPP;

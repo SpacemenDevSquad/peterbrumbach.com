@@ -15,23 +15,23 @@ const Contact = lazy(() => import('./views/contact.jsx'));
 const Credits = lazy(() => import('./views/credits.jsx'));
 
 // Deal or No Deal
-const DONDHome = lazy(() => import('./views/DOND.jsx'));
-const DONDPlay = lazy(() => import('./views/DONDPlay.jsx'));
+const DONDHome = lazy(() => import('./views/projects/DOND.jsx'));
+const DONDPlay = lazy(() => import('./views/projects/DONDPlay.jsx'));
 
 // Christmas Crash
-const CCHome = lazy(() => import('./views/CCHome.jsx'));
-const CCPP = lazy(() => import('./views/CCPP.jsx'));
+const CCHome = lazy(() => import('./views/projects/CCHome.jsx'));
+const CCPP = lazy(() => import('./views/projects/CCPP.jsx'));
 const Countdown = lazy(() => import('./views/countdown.jsx'));
 
 // Pointless Wars
-const PWHome = lazy(() => import('./views/PWHome.jsx'));
-const PWPP = lazy(() => import('./views/PWPP.jsx'));
-const PWPlay = lazy(() => import('./views/PWPlay.jsx'));
+const PWHome = lazy(() => import('./views/projects/PWHome.jsx'));
+const PWPP = lazy(() => import('./views/projects/PWPP.jsx'));
+const PWPlay = lazy(() => import('./views/projects/PWPlay.jsx'));
 
 // Drop the Ball
-const DropHome = lazy(() => import('./views/PWHome.jsx'));
-const DropPlay = lazy(() => import('./views/PWHome.jsx'));
-const DropPP = lazy(() => import('./views/PWHome.jsx'));
+const DropHome = lazy(() => import('./views/projects/DTBHome.jsx'));
+const DropPlay = lazy(() => import('./views/projects/DTBPlay.jsx'));
+const DropPP = lazy(() => import('./views/projects/DTBPP.jsx'));
 
 // Global CSS
 import './css/global/fonts.css'
