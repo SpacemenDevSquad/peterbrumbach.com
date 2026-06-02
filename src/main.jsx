@@ -23,6 +23,14 @@ const CCHome = lazy(() => import('./views/CCHome.jsx'));
 const CCPP = lazy(() => import('./views/CCPP.jsx'));
 const Countdown = lazy(() => import('./views/countdown.jsx'));
 
+// Pointless Wars
+const PWHome = lazy(() => import('./views/PWHome.jsx'));
+const PWPP = lazy(() => import('./views/PWPP.jsx'));
+const PWPlay = lazy(() => import('./views/PWPlay.jsx'));
+
+// Drop the Ball
+
+
 // Global CSS
 import './css/global/fonts.css'
 
@@ -42,6 +50,11 @@ createRoot(document.getElementById('root')).render(
         <Route path="/christmascrash" element={<CCHome/>}/>
         <Route path="/christmascrash/privacypolicy" element={<CCPP/>}/>
         <Route path="/countdown" element={<Countdown/>}/>
+
+        <Route path="/pointless-wars" element={<PWHome/>}/>
+        <Route path="/pointlesswars/privacypolicy" element={<PWPP/>}/>
+        <Route path="/pointless-wars/privacypolicy" element={<PWPP/>}/>
+        <Route path="/pointless-wars/play" element={<PWPlay/>}/>
 
         <Route path="*" element={<Error404/>}/>
       </Routes>

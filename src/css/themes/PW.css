@@ -8,7 +8,7 @@
 
 /* Background */
 html {
-    cursor: url("/images/cursors/Red.png"), default;
+    cursor: url("../../assets/images/cursors/Red.png"), default;
     overflow-x: hidden;
     background-color: #3E86A1;
 }
@@ -73,7 +73,7 @@ h1 {
     display: flex;
     align-items: center;
     user-select: none;
-    background-image: url("/images/PW/Bluebg.png");
+    background-image: url("../../assets/images/PW/Bluebg.png");
     background-size: 80vw 35vw;
 
     width: 80vw;
@@ -128,7 +128,7 @@ h1 {
 
     border: none;
     background: none;
-    background-image: url("/images/PW/rButton/rButton1.png");
+    background-image: url("../../assets/images/PW/rButton/rButton1.png");
     background-size: 30vw 15.8vw;
     border-radius: 2vw;
 
@@ -141,14 +141,14 @@ h1 {
 }
 
 #playButton:hover {
-    background-image: url("/images/PW/rButton/rButton2.png");
+    background-image: url("../../assets/images/PW/rButton/rButton2.png");
     color: white;
     background-color: black;
     box-shadow: 0 12px 20px 15px rgba(255, 255, 255, 0.24);
 }
 
 #playButton:active {
-    background-image: url("/images/PW/rButton/rButton3.png");
+    background-image: url("../../assets/images/PW/rButton/rButton3.png");
     color: white;
     background-color: black;
     box-shadow: 0 12px 20px 15px rgba(255, 255, 255, 0.24);

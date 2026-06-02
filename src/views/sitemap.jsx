@@ -56,15 +56,15 @@ const Sitemap = () => {
         <h3>Pointless Wars (Unity Game)</h3>
         <p className="link">
             Pointless Wars Home: 
-            <a href="/pointlesswars"> https://peterbrumbach.com/pointlesswars</a>
+            <a href="/pointless-wars"> https://peterbrumbach.com/pointless-wars</a>
         </p>
         <p className="link">
             Pointless Wars Play: 
-            <a href="/pointlesswars/play"> https://peterbrumbach.com/pointlesswars/play</a>
+            <a href="/pointless-wars/play"> https://peterbrumbach.com/pointless-wars/play</a>
         </p>
         <p className="link">
             Pointless Wars Privacy Policy:
-            <a href="/pointlesswars/privacypolicy"> https://peterbrumbach.com/pointlesswars/privacypolicy</a>
+            <a href="/pointless-wars/privacypolicy"> https://peterbrumbach.com/pointless-wars/privacypolicy</a>
         </p>
         <h3>Deal or No Deal (Unity Game)</h3>
         <p className="link">

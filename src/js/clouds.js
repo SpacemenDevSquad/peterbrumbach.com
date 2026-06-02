@@ -5,9 +5,9 @@
  * Adds moving clouds in the background to appear at random times
  */
 
-document.addEventListener("DOMContentLoaded", () => {
-    cloudsMain();
-});
+import cloud1 from "../assets/images/PW/clouds/cloud1.png";
+import cloud2 from "../assets/images/PW/clouds/cloud2.png";
+import cloud3 from "../assets/images/PW/clouds/cloud3.png";
 
 async function cloudsMain() {
     // Makes the default cloud template
@@ -33,11 +33,11 @@ async function startCloudInterval(milliSeconds, speed) {
         newCloud.style.top = (Math.random()*20+5).toString()+'%';
         const spawnChance = Math.random();
         if (spawnChance < 0.3) {
-            newCloud.src = "/images/PW/clouds/cloud2.png";
+            newCloud.src = cloud1;
         } else if (spawnChance < 0.6) {
-            newCloud.src = "/images/PW/clouds/cloud3.png";
+            newCloud.src = cloud2;
         } else {
-            newCloud.src = "/images/PW/clouds/cloud1.png";
+            newCloud.src = cloud3;
         }
         document.body.appendChild(newCloud);
         let newInterval = setInterval(()=> {
@@ -52,3 +52,5 @@ async function startCloudInterval(milliSeconds, speed) {
 
     }, milliSeconds);
 }
+
+export default cloudsMain;
