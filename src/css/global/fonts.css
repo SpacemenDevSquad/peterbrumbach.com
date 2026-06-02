@@ -1,0 +1,48 @@
+/*
+* Fonts
+*/
+
+@font-face {
+    font-family: Roboto Slab;
+    src: url('/src/assets/fonts/roboto.woff2') format('woff2'),
+         url('/src/assets/fonts/roboto.woff') format('woff'),
+         url('/src/assets/fonts/roboto.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Pixelify Sans;
+    src: url('/src/assets/fonts/pixel.woff2') format('woff2'),
+         url('/src/assets/fonts/pixel.woff') format('woff'),
+         url('/src/assets/fonts/pixel.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Jersey;
+    src: url('/src/assets/fonts/jersey10.woff2') format('woff2'),
+         url('/src/assets/fonts/jersey10.woff') format('woff'),
+         url('/src/assets/fonts/jersey10.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Christmas;
+    src: url('/src/assets/fonts/christmas.woff2') format('woff2'),
+         url('/src/assets/fonts/christmas.woff') format('woff'),
+         url('/src/assets/fonts/christmas.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Festive;
+    src: url('/src/assets/fonts/festive.woff2') format('woff2'),
+         url('/src/assets/fonts/festive.woff') format('woff'),
+         url('/src/assets/fonts/festive.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
