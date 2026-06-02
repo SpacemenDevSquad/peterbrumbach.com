@@ -43,15 +43,15 @@ const Sitemap = () => {
         <h3>Drop Thee Ball (Unity Game)</h3>
         <p className="link">
             Drop Thee Ball Home:
-            <a href="/DropTheeBall"> https://peterbrumbach.com/DropTheeBall</a>
+            <a href="/drop-thee-ball"> https://peterbrumbach.com/drop-thee-ball</a>
         </p>
         <p className="link">
             Drop Thee Ball Play:
-            <a href="/DropTheeBall/play"> https://peterbrumbach.com/DropTheeBall/play</a>
+            <a href="/drop-thee-ball/play"> https://peterbrumbach.com/drop-thee-ball/play</a>
         </p>
         <p className="link">
             Drop Thee Ball Privacy Policy:
-            <a href="/DropTheeBall/privacypolicy"> https://peterbrumbach.com/DropTheeBall/privacypolicy</a>
+            <a href="/drop-thee-ball/privacypolicy"> https://peterbrumbach.com/drop-thee-ball/privacypolicy</a>
         </p>
         <h3>Pointless Wars (Unity Game)</h3>
         <p className="link">
