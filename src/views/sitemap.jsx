@@ -24,7 +24,7 @@ const Sitemap = () => {
         link.rel = "icon";
         link.href = favicon;
         document.head.appendChild(link);
-        document.title = "Peter Brumbach";
+        document.title = "Sitemap";
     })
 
     return (

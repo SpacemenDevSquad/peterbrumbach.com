@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 // CSS
-import '../css/documents/errorPage.css'
+import '../css/documents/contact.css'
 import '../css/global/smallStar.css'
 
 // Javascript
@@ -13,7 +13,7 @@ import favicon from '../assets/images/favicon.ico';
 // Components
 import Footer from '../components/footer.jsx';
 
-const Error = () => {
+const Contact = () => {
 
     useEffect(() => {
         // Execute javascript functions
@@ -24,21 +24,21 @@ const Error = () => {
         link.rel = "icon";
         link.href = favicon;
         document.head.appendChild(link);
-        document.title = "Peter Brumbach";
+        document.title = "Contact";
     })
 
     return (
     <>
         <div id="vertical">
-            <div id="horizontal">
-                <h1>404</h1>
-                <h2>File Not Found</h2>
-                <a href="/">Back to Homepage</a>
-            </div>
+            <h1>
+                To contact me about any of my projects, please use this email
+            </h1>
+            <p>Email: contact@peterbrumbach.com</p>
+            <div style={{height: "40px"}}></div>
         </div>
         <Footer/>
     </>
     );
 }
 
-export default Error;
+export default Contact;
