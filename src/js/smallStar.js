@@ -5,7 +5,7 @@
  * Renders the background stars on html page
  */
 
-const starImageLocation = "/src/assets/images/stars/smallStar.png";
+import starImageLocation from "../assets/images/stars/smallStar.png";
 
 async function smallStars(){
     // Constant Variables

@@ -6,9 +6,9 @@
  * Can be toggled/paused using onscreen button
  */
 
-const volume0 = "/src/assets/images/volume/volume0.png";
-const volume1 = "/src/assets/images/volume/volume1.png";
-const blipSelect = "/src/assets/sfx/blipSelect.wav";
+import volume0 from "../assets/images/volume/volume0.png";
+import volume1 from "../assets/images/volume/volume1.png";
+import blipSelect from "../assets/sfx/blipSelect.wav";
 
 async function audioButtonMain(url) {
     // Inital Functions

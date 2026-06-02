@@ -2,19 +2,17 @@
  * Background star functions
  */
 
-const starImageLocation = "/src/assets/images/stars/";
+import star0 from "../assets/images/stars/star0.png";
+import star1 from "../assets/images/stars/star1.png";
+import star2 from "../assets/images/stars/star2.png";
+import star3 from "../assets/images/stars/star3.png";
+import star4 from "../assets/images/stars/star4.png";
 
 // Create the default blinking star
 async function initalizeStars() {
 
     // Time interval to spawn a star (milliseconds)
     const time = 300;
-
-    const star0 = starImageLocation+"star0.png";
-    const star1 = starImageLocation+"star1.png";
-    const star2 = starImageLocation+"star2.png";
-    const star3 = starImageLocation+"star3.png";
-    const star4 = starImageLocation+"star4.png";
     const starArray = [star0, star1, star2, star3, star4, star4, star3, star2, star1, star0];
     const defaultStar = new Image();
     defaultStar.className = "star";
