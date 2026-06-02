@@ -5,9 +5,7 @@
  * Renders snow in the background on html page
  */
 
-document.addEventListener("DOMContentLoaded", () => {
-    snowMain();
-});
+import snowImage from "../assets/images/ChristmasCrash/Snow.png";
 
 async function snowMain() {
     await defaultSnow();
@@ -22,11 +20,11 @@ async function snowMain() {
  * Also contains default variables
  */
 let defaultSnowflake = null;
-let defaultScreenFall = 0.7;
-let defaultWindMod = 3;
-let defaultFallSpeed = 20;
-let spawnTime = 100;
-let cursorModify = 0;
+let defaultScreenFall = 1.0;
+let defaultWindMod = 0;
+let defaultFallSpeed = 35;
+let spawnTime = 50;
+let cursorModify = -0.05;
 let cursorX = 0;
 
 // Sets the distance the snow will fall (1.0 is bottom of body)
@@ -66,7 +64,7 @@ async function setCursorModify(decimal) {
 async function defaultSnow(){
     // Create the snowflake template
     defaultSnowflake = new Image();
-    defaultSnowflake.src = "/images/ChristmasCrash/Snow.png"
+    defaultSnowflake.src = snowImage;
     defaultSnowflake.className = "snow";
     defaultSnowflake.style.width = (window.innerHeight/100).toString()+"px";
     defaultSnowflake.style.height = defaultSnowflake.style.width;
@@ -96,3 +94,5 @@ async function snowfall() {
         }, frameTime)
     }, spawnTime)
 }
+
+export default snowMain;

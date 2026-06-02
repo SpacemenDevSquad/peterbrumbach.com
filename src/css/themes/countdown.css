@@ -12,16 +12,15 @@
 }
 
 /* Background CSS */
-body, html {
-    cursor: url("/images/cursors/Green.png"), default;
-    background-color: rgb(102, 27, 27);
+body, html, #root {
+    background-color: rgba(255, 255, 255, 0);
     overflow: hidden;
     height: 100%;
     z-index: -5;
 }
 
-body {
-    background-color: none;
+html {
+    background-color: rgb(102, 27, 27);
 }
 
 /* Alignment divs */

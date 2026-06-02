@@ -5,6 +5,8 @@
  * Load onto every html page, used to get footer on page and working
  */
 
+import verseJSON from '../json/verses.json'
+
 async function footerMain() {
     resizeFooter();
     getVerse();
@@ -64,11 +66,10 @@ async function resizeFooter() {
 async function getVerse() {
 
     // Get JSON, the verse node, and make a random number
-    const rawData = await fetch("/src/json/verses.json");
     const bibleVerse = document.getElementById("verse");
 
     // Validate JSON file and get random number
-    const verses = (await validateJSON(rawData)).verses;
+    const verses = verseJSON.verses;
     const numOfVerses = verses.length;
     const randomNum = Math.floor(Math.random()*numOfVerses).toString();
 

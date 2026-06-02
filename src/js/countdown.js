@@ -5,10 +5,6 @@
  * Counts down the days until Christmas
  */
 
-document.addEventListener("DOMContentLoaded", () => {
-    countMain();
-});
-
 // Global Access Nodes
 const dayOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let days;
@@ -61,3 +57,5 @@ async function countdown(christmas) {
 
     seconds.innerText = timeDifference;
 }
+
+export default countMain;

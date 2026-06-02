@@ -18,6 +18,11 @@ const Credits = lazy(() => import('./views/credits.jsx'));
 const DONDHome = lazy(() => import('./views/DOND.jsx'));
 const DONDPlay = lazy(() => import('./views/DONDPlay.jsx'));
 
+// Christmas Crash
+const CCHome = lazy(() => import('./views/CCHome.jsx'));
+const CCPP = lazy(() => import('./views/CCPP.jsx'));
+const Countdown = lazy(() => import('./views/countdown.jsx'));
+
 // Global CSS
 import './css/global/fonts.css'
 
@@ -33,6 +38,10 @@ createRoot(document.getElementById('root')).render(
 
         <Route path="/DOND" element={<DONDHome/>}/>
         <Route path="/DOND/play" element={<DONDPlay/>}/>
+
+        <Route path="/christmascrash" element={<CCHome/>}/>
+        <Route path="/christmascrash/privacypolicy" element={<CCPP/>}/>
+        <Route path="/countdown" element={<Countdown/>}/>
 
         <Route path="*" element={<Error404/>}/>
       </Routes>
