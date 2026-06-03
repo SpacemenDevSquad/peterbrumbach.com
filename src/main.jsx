@@ -10,7 +10,6 @@ import { lazy, Suspense } from "react";
 const Home = lazy(() => import('./views/home.jsx'));
 const TOS = lazy(() => import('./views/TOS.jsx'));
 const Sitemap = lazy(() => import('./views/sitemap.jsx'));
-const Error404 = lazy(() => import('./views/404.jsx'));
 const Contact = lazy(() => import('./views/contact.jsx'));
 const Credits = lazy(() => import('./views/credits.jsx'));
 
@@ -70,8 +69,6 @@ createRoot(document.getElementById('root')).render(
         <Route path="/portfolio" element={<PortHome/>}/>
         <Route path="/pdfView" element={<PdfView/>}/>
         <Route path="/portfolio/contact" element={<PortContact/>}/>
-
-        <Route path="*" element={<Error404/>}/>
       </Routes>
     </Suspense>
   </BrowserRouter>
