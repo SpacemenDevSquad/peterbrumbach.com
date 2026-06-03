@@ -17,7 +17,7 @@ const DTBPlay = () => {
         link.rel = "icon";
         link.href = favicon;
         document.head.appendChild(link);
-        document.title = "Pointless Wars: Web Player";
+        document.title = "Drop Thee Ball: Web Player";
     })
 
     return (

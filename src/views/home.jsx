@@ -9,10 +9,11 @@ import smallStars from '../js/smallStar.js';
 import initalizeStars from '../js/blinkStar.js';
 import planetLoader from '../js/planetLoader.js';
 
-// Images
+// Assets
 import greenPlanet from '../assets/images/planets/greenPlanet.png';
 import largeGrayPlanet from '../assets/images/planets/largeGrayPlanet.png';
 import favicon from '../assets/images/favicon.ico';
+import HomeSong from '../assets/music/WebPage Home.mp3';
 
 // Components
 import AudioButton from '../components/audioButton.jsx';

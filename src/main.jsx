@@ -35,6 +35,8 @@ const DropPP = lazy(() => import('./views/projects/DTBPP.jsx'));
 
 // Portfolio
 const PortHome = lazy(() => import('./views/portfolio/portHome.jsx'))
+const PdfView = lazy(() => import('./views/portfolio/pdfView.jsx'))
+const PortContact = lazy(() => import('./views/portfolio/portfolioContact.jsx'))
 
 // Global CSS
 import './css/global/fonts.css'
@@ -66,6 +68,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/drop-thee-ball/privacypolicy" element={<DropPP/>}/>
 
         <Route path="/portfolio" element={<PortHome/>}/>
+        <Route path="/pdfView" element={<PdfView/>}/>
+        <Route path="/portfolio/contact" element={<PortContact/>}/>
 
         <Route path="*" element={<Error404/>}/>
       </Routes>

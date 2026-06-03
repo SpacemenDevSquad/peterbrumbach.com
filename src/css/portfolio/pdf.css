@@ -8,7 +8,7 @@ html, body {
 
 html {
     background-color: black;
-    background-image: url("/images/tree.JPG");
+    background-image: url("../../assets/images/portfolio/tree.JPG");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

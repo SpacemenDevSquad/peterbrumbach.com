@@ -88,6 +88,15 @@ const Sitemap = () => {
             Live Christmas Countdown: 
             <a href="/countdown"> https://peterbrumbach.com/countdown</a>
         </p>
+        <h2 className="header">Portfolio</h2>
+        <p className="link">
+            Portfolio Home:
+            <a href="/portfolio"> https://peterbrumbach.com/portfolio</a>
+        </p>
+        <p className="link">
+            Portfolio Contact:
+            <a href="/portfolio/contact"> https://peterbrumbach.com/portfolio/contact</a>
+        </p>
         <h2 className="header">Other</h2>
         <p className="link">
             Sitemap:
