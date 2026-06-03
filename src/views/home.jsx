@@ -37,7 +37,7 @@ const Home = () => {
 
     return (
     <>
-        <AudioButton path="/src/assets/music/WebPage Home.mp3"/>
+        <AudioButton path={HomeSong}/>
         <h1 className="whiteText">Welcome!</h1>
         <p className="whiteText">Scroll Down...</p>
         <img className="planet" id="GreenPlanet" src={greenPlanet}/>
