@@ -34,7 +34,7 @@ const DropPlay = lazy(() => import('./views/projects/DTBPlay.jsx'));
 const DropPP = lazy(() => import('./views/projects/DTBPP.jsx'));
 
 // Portfolio
-const PortHome = lazy(() => import('./views/portfolio/PortHome.jsx'))
+const PortHome = lazy(() => import('./views/portfolio/portHome.jsx'))
 
 // Global CSS
 import './css/global/fonts.css'

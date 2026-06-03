@@ -57,7 +57,7 @@ const PortHome = () => {
 
                     <div id="innerBlock" style={{display: "flex"}}>
                         <div id="socialMedia">
-                            <a className="social" href="https://www.linkedin.com/in/peter-brumbach-307462287/"><FaLinkedin height="100%" width="100%"/></a>
+                            <a className="social" href="https://www.linkedin.com/in/peter-brumbach-307462287/"><FaLinkedin height="100%" width="100%"/></a> 
                             <div className="spacer" style={{height: "20%"}}></div>
                             <a className="social" href="https://github.com/SpacemenDevSquad"><FaGithub/></a>
                             <div className="spacer" style={{height: "20%"}}></div>
